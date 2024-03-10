@@ -13,6 +13,12 @@ public class methods_File {
     String file = "database.txt";
     int counter = 0;
     Panel_Sign_in sign = new Panel_Sign_in();
+    String us, pass;
+
+    public void setDatos(String us, String pass) {
+        this.us = us;
+        this.pass = pass;
+    }
 
     public void Read_File() throws IOException {
         try {
@@ -49,6 +55,13 @@ public class methods_File {
             user = word2[1];
             password = word2[2];
         }
-        sign.CompareDate(user, password);
+        ValiditySesion(user, password);
+    }
+
+    public void ValiditySesion(String user, String password) {
+
+        if (user.equals(us) && password.equals(pass)) {
+            Panel_Sign_in.band = true;
+        }
     }
 }
