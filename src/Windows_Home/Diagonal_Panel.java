@@ -57,10 +57,10 @@ public class Diagonal_Panel extends JPanel{
     private final int height = too.height - 140;
     private final int widthImg = 100;
     private final int heightImg = 100;
-    Image imgChat = new ImageIcon(getClass().getResource("../Multimedia/icon-app.png")).getImage();
-    Image imgCommunity = new ImageIcon(getClass().getResource("../Multimedia/icon-app.png")).getImage();
-    Image imgIA = new ImageIcon(getClass().getResource("../Multimedia/icon-app.png")).getImage();
-    Image imgCompiler = new ImageIcon(getClass().getResource("../Multimedia/icon-app.png")).getImage();
+    Image imgChat = new ImageIcon(getClass().getResource("../Multimedia/Icon-Message-modified.png")).getImage();
+    Image imgCommunity = new ImageIcon(getClass().getResource("../Multimedia/Icon-Community-modified.png")).getImage();
+    Image imgIA = new ImageIcon(getClass().getResource("../Multimedia/Icon-IA-modified.png")).getImage();
+    Image imgCompiler = new ImageIcon(getClass().getResource("../Multimedia/Icon-Settings-modified.png")).getImage();
     JLabel labelChat = new JLabel();
     JLabel labelCommunity = new JLabel();
     JLabel labelIA = new JLabel();

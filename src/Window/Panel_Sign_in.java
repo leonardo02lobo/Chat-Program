@@ -66,6 +66,14 @@ public class Panel_Sign_in extends JPanel{
         });
     }
     
+    public void CompareDate(String userDataBase, String passwordDataBase) {
+        if (username.getText().equals(userDataBase) && password.getText().equals(passwordDataBase)) {
+            band = true;
+            System.out.println(band);
+        }
+    }
+    
+    boolean band = false;
     Dimension too = super.getToolkit().getScreenSize();
     necessary_methods methods = new necessary_methods();
     JLabel sign_in = new JLabel();
