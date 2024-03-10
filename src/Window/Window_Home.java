@@ -1,14 +1,18 @@
 package Window;
 
-import Principal.App;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.JPanel;
 
 public class Window_Home extends JPanel{
     
     public Window_Home() {
-        super.setSize(App.width, App.height);
+        Dimension too = super.getToolkit().getScreenSize();
+        super.setSize(too);
         super.setLayout(null);
         super.setBackground(new Color(10, 15, 20));
+        super.add(Bar);
     }
+    
+    public Navigation_Bar Bar = new Navigation_Bar();
 }

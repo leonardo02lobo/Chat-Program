@@ -1,8 +1,10 @@
 package Window;
 
 import Principal.App;
+import static Principal.App.windowApp;
 import Utils.necessary_methods;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -45,10 +47,12 @@ public class Panel_Sign_in extends JPanel{
                 if ((lic_sign_in.isSelected()) && username.getText() != "" && password.getText() != "") {
                     Window_Home window = new Window_Home();
                     JFrame windowApp = new JFrame();
+                    App app = new App();
                     windowApp.add(window);
                     windowApp.pack();
+                    windowApp.setIconImage(app.icon);
                     windowApp.setTitle("Chat Para Programadores");
-                    windowApp.setSize(App.width, App.height);
+                    windowApp.setSize(too);
                     windowApp.setResizable(true);
                     windowApp.setLocationRelativeTo(null);
                     windowApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,6 +65,7 @@ public class Panel_Sign_in extends JPanel{
         });
     }
     
+    Dimension too = super.getToolkit().getScreenSize();
     necessary_methods methods = new necessary_methods();
     JLabel sign_in = new JLabel();
     JLabel sign_up = new JLabel();
