@@ -20,22 +20,22 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Panel_Sign_in extends JPanel{
-    
-    public Panel_Sign_in(){
+public class Panel_Sign_in extends JPanel {
+
+    public Panel_Sign_in() {
         super.setLayout(null);
-        super.setSize(400,500);
+        super.setSize(400, 500);
         super.setBackground(new Color(10, 15, 20));
-        super.setLocation(290,160);
+        super.setLocation(290, 160);
         init();
     }
 
     private void init() {
-        methods.initLabel(this,label_username, (getWidth() / 2) - 150, getHeight() - 430, 150, 30, "USERNAME");
-        methods.initTextField(this,username, (getWidth() / 2) - 150, getHeight() - 400, 300, 30);
-        methods.initLabel(this,label_password, (getWidth() / 2) - 150, getHeight() - 330, 150, 30, "PASSWORD");
-        methods.initTextField(this,password, (getWidth() / 2) - 150, getHeight() - 300, 300, 30);
-        methods.initCheck(this,lic_sign_in, (getWidth() / 2) - 150, getHeight() - 200, 150, 30, "KEEP ME SIGN IN");
+        methods.initLabel(this, label_username, (getWidth() / 2) - 150, getHeight() - 430, 150, 30, "USERNAME");
+        methods.initTextField(this, username, (getWidth() / 2) - 150, getHeight() - 400, 300, 30);
+        methods.initLabel(this, label_password, (getWidth() / 2) - 150, getHeight() - 330, 150, 30, "PASSWORD");
+        methods.initTextField(this, password, (getWidth() / 2) - 150, getHeight() - 300, 300, 30);
+        methods.initCheck(this, lic_sign_in, (getWidth() / 2) - 150, getHeight() - 200, 150, 30, "KEEP ME SIGN IN");
         initButton(button_sign_in, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, "SIGN IN");
     }
 
@@ -56,20 +56,8 @@ public class Panel_Sign_in extends JPanel{
                     file.setDatos(user, pass);
                     file.Read_File();
                     if ((lic_sign_in.isSelected()) && band) {
-                        Window_Home window = new Window_Home();
-                        JFrame windowApp = new JFrame();
-                        App app = new App();
-                        windowApp.add(window);
-                        windowApp.pack();
-                        windowApp.setIconImage(app.icon);
-                        windowApp.setTitle("Chat Para Programadores");
-                        windowApp.setSize(too);
-                        windowApp.setResizable(true);
-                        windowApp.setLocationRelativeTo(null);
-                        windowApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        windowApp.setVisible(true);
-                        App.windowApp.dispose();
-                    }else{
+                        OpenWindow();
+                    } else {
                         JOptionPane.showMessageDialog(null, "Algo salio mal, Intenta nuevamente");
                     }
                 } catch (IOException ex) {
@@ -78,7 +66,23 @@ public class Panel_Sign_in extends JPanel{
             }
         });
     }
-    
+
+    private void OpenWindow() {
+        Window_Home window = new Window_Home();
+        JFrame windowApp = new JFrame();
+        App app = new App();
+        windowApp.add(window);
+        windowApp.pack();
+        windowApp.setIconImage(app.icon);
+        windowApp.setTitle("Chat Para Programadores");
+        windowApp.setSize(too);
+        windowApp.setResizable(true);
+        windowApp.setLocationRelativeTo(null);
+        windowApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        windowApp.setVisible(true);
+        App.windowApp.dispose();
+    }
+
     public static boolean band = false;
     Dimension too = super.getToolkit().getScreenSize();
     necessary_methods methods = new necessary_methods();
