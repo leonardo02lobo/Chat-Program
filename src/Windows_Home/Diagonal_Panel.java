@@ -32,6 +32,15 @@ public class Diagonal_Panel extends JPanel{
         label.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                if(e.getSource().equals(labelChat)){
+                    Window_Home.Posicion = 0;
+                }else if(e.getSource().equals(labelCommunity)){
+                    Window_Home.Posicion = 1;
+                }else if(e.getSource().equals(labelIA)){
+                    Window_Home.Posicion = 2;
+                }else if(e.getSource().equals(labelCompiler)){
+                    Window_Home.Posicion = 3;
+                }
             }
 
             @Override
