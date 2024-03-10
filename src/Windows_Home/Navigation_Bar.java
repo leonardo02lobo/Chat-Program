@@ -6,6 +6,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -36,6 +38,16 @@ public class Navigation_Bar extends JPanel {
         label.setIcon(new ImageIcon(img.getScaledInstance(width, height, Image.SCALE_SMOOTH)));
         label.setBounds(x, y, width, height);
         super.add(label);
+        label.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(e.getSource().equals(labelUser)){
+                    Window_Home.Posicion = 4;
+                }else if(e.getSource().equals(labelFriend)){
+                    Window_Home.Posicion = 5;
+                }
+            }
+        });
     }
 
     Image imgFriend = new ImageIcon(getClass().getResource("../Multimedia/Icon-Friend.png")).getImage();

@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.colorchooser.AbstractColorChooserPanel;
 
 public class Window_Home extends JPanel {
 
@@ -29,15 +30,25 @@ public class Window_Home extends JPanel {
         switch (Posicion) {
             case 0:
                 Change_Panels(chat);
+                content = chat;
                 break;
             case 1:
                 Change_Panels(community);
+                content = chat;
                 break;
             case 2:
                 Change_Panels(ia);
+                content = chat;
                 break;
             case 3:
                 Change_Panels(compiler);
+                content = chat;
+                break;
+            case 4:
+                Change_Panel_Settings(user, content);
+                break;
+            case 5:
+                Change_Panel_Settings(friend, content);
                 break;
         }
     }
@@ -46,6 +57,16 @@ public class Window_Home extends JPanel {
         super.removeAll();
         super.add(panel, BorderLayout.CENTER);
         super.add(diagonal);
+        super.add(Bar);
+        super.revalidate();
+        super.repaint();
+    }
+    
+    private void Change_Panel_Settings(JPanel panel,JPanel content) {
+        super.removeAll();
+        super.add(panel, BorderLayout.CENTER);
+        super.add(diagonal);
+        super.add(content);
         super.add(Bar);
         super.revalidate();
         super.repaint();
@@ -59,4 +80,7 @@ public class Window_Home extends JPanel {
     Navigation_Bar Bar = new Navigation_Bar();
     Panel_AI ia = new Panel_AI();
     Panel_Compiler compiler = new Panel_Compiler();
+    Panel_Friend friend = new Panel_Friend();
+    Panel_User user = new Panel_User();
+    JPanel content = new JPanel();
 }
