@@ -34,15 +34,15 @@ public class Window_Home extends JPanel {
                 break;
             case 1:
                 Change_Panels(community);
-                content = chat;
+                content = community;
                 break;
             case 2:
                 Change_Panels(ia);
-                content = chat;
+                content = ia;
                 break;
             case 3:
                 Change_Panels(compiler);
-                content = chat;
+                content = compiler;
                 break;
             case 4:
                 Change_Panel_Settings(user, content);
