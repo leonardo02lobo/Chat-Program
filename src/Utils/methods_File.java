@@ -14,6 +14,7 @@ public class methods_File {
     int counter = 0;
     String us, pass;
     public static String Dataname = "";
+    Data_UserName username = new Data_UserName();
 
     public void setDatos(String us, String pass) {
         this.us = us;
@@ -48,10 +49,10 @@ public class methods_File {
     public void tokens2(String date2) {
         for (int i = 0; i < counter / 2; i++) {
             String[] word2 = date2.split(";");
-            String name = word2[0];
-            String user = word2[1];
-            String password = word2[2];
-            ValiditySesion(user, password,name);
+            username.setName(word2[0]);
+            username.setUser(word2[1]);
+            username.setPassword(word2[2]);
+            ValiditySesion(username.getUser(), username.getPassword(),username.getName());
         }
     }
 

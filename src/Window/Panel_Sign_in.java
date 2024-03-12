@@ -2,7 +2,6 @@ package Window;
 
 import Windows_Home.Window_Home;
 import Principal.App;
-import static Principal.App.windowApp;
 import Utils.methods_File;
 import Utils.necessary_methods;
 import java.awt.Color;
@@ -16,7 +15,6 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -46,6 +44,7 @@ public class Panel_Sign_in extends JPanel {
         button.setForeground(Color.white);
         button.setOpaque(false);
         super.add(button);
+        panel = this;
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -58,7 +57,7 @@ public class Panel_Sign_in extends JPanel {
                     if ((lic_sign_in.isSelected()) && band) {
                         OpenWindow();
                     } else {
-                        JOptionPane.showMessageDialog(null, "Algo salio mal, Intenta nuevamente");
+                        methods.initLabel(panel, warning, getWidth()-350, getHeight()-100, 350, 30, "Algo salio mal, Intenta nuevamente");
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(Panel_Sign_in.class.getName()).log(Level.SEVERE, null, ex);
@@ -95,4 +94,6 @@ public class Panel_Sign_in extends JPanel {
     JCheckBox lic_sign_in = new JCheckBox();
     JButton button_sign_in = new JButton();
     JLabel linea = new JLabel();
+    JLabel warning = new JLabel();
+    JPanel panel = new JPanel();
 }

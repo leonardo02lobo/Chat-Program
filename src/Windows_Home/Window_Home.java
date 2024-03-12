@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.colorchooser.AbstractColorChooserPanel;
 
 public class Window_Home extends JPanel {
 
