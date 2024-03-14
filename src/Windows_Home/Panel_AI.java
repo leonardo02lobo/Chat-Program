@@ -10,7 +10,7 @@ public class Panel_AI extends JPanel{
 
     public Panel_AI() {
         super.setLayout(null);
-        super.setBackground(Color.cyan);
+        super.setBackground(new Color(10, 15, 20));
         super.setLocation(130, 100);
         super.setSize(too.width - 145, too.height - 140);
     }

@@ -2,15 +2,17 @@ package Utils;
 
 import Window.Panel_Sign_in;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class methods_File {
 
-    String file = "database.txt";
+    File file = new File("database.txt");
     int counter = 0;
     String us, pass;
     public static String Dataname = "";
@@ -19,6 +21,16 @@ public class methods_File {
     public void setDatos(String us, String pass) {
         this.us = us;
         this.pass = pass;
+    }
+
+    public void write_File(String user, String password, String name) {
+        try {
+            FileWriter write_file = new FileWriter(file, true);
+            write_file.write(name + ";" + user + ";" + password + "\n");
+            write_file.close();
+        } catch (IOException ex) {
+            Logger.getLogger(methods_File.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void Read_File() throws IOException {
@@ -52,11 +64,11 @@ public class methods_File {
             username.setName(word2[0]);
             username.setUser(word2[1]);
             username.setPassword(word2[2]);
-            ValiditySesion(username.getUser(), username.getPassword(),username.getName());
+            ValiditySesion(username.getUser(), username.getPassword(), username.getName());
         }
     }
 
-    public void ValiditySesion(String user, String password,String name) {
+    public void ValiditySesion(String user, String password, String name) {
 
         if (user.equals(us) && password.equals(pass)) {
             Dataname = name;

@@ -16,6 +16,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Panel_Sign_in extends JPanel {
@@ -90,7 +91,7 @@ public class Panel_Sign_in extends JPanel {
     JLabel label_username = new JLabel();
     JTextField username = new JTextField();
     JLabel label_password = new JLabel();
-    JTextField password = new JTextField();
+    JPasswordField password = new JPasswordField();
     JCheckBox lic_sign_in = new JCheckBox();
     JButton button_sign_in = new JButton();
     JLabel linea = new JLabel();
