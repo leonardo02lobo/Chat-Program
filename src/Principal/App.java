@@ -9,6 +9,7 @@ public class App {
 
     public static int width = 1000;
     public static int height = 700;
+    public static JFrame windowApp2 = new JFrame();
     public static JFrame windowApp = new JFrame();
     public Image icon = new ImageIcon(getClass().getResource("../Multimedia/icon-app.png")).getImage();
 

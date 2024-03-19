@@ -69,17 +69,16 @@ public class Panel_Sign_in extends JPanel {
 
     private void OpenWindow() {
         Window_Home window = new Window_Home();
-        JFrame windowApp = new JFrame();
         App app = new App();
-        windowApp.add(window);
-        windowApp.pack();
-        windowApp.setIconImage(app.icon);
-        windowApp.setTitle("Chat Para Programadores");
-        windowApp.setSize(too);
-        windowApp.setResizable(true);
-        windowApp.setLocationRelativeTo(null);
-        windowApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        windowApp.setVisible(true);
+        App.windowApp2.add(window);
+        App.windowApp2.pack();
+        App.windowApp2.setIconImage(app.icon);
+        App.windowApp2.setTitle("Chat Para Programadores");
+        App.windowApp2.setSize(too);
+        App.windowApp2.setResizable(true);
+        App.windowApp2.setLocationRelativeTo(null);
+        App.windowApp2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        App.windowApp2.setVisible(true);
         App.windowApp.dispose();
     }
 

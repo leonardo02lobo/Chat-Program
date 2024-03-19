@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/Utils/Var_necessary.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>6</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Panel_Chat.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Panel_Friend.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Panel_AI.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Panel_Compiler.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Navigation_Bar.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Utils/methods_File.java</file>
+            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Diagonal_Panel.java</file>
+            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Chat/Panel_Chat.java</file>
             <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Panel_Community.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Window/Panel_Sign_in.java</file>
             <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Window_Home.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Utils/Data_UserName.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Windows_Home/Panel_User.java</file>
-            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Window/Panel_Sign_Up.java</file>
+            <file>file:/C:/Users/FAMILIA/Documents/JAVA/Programas/JAVA%20WEB/Chat%20Para%20Programar/src/Utils/Var_necessary.java</file>
         </group>
     </open-files>
 </project-private>

@@ -11,7 +11,7 @@ public class Panel_Community extends JPanel{
     public Panel_Community() {
         super.setLayout(null);
         super.setBackground(Color.GRAY/*new Color(10, 15, 20)*/);
-        super.setLocation(130, 100);
-        super.setSize(too.width - 145, too.height - 140);
+        super.setLocation(0, 0);
+        super.setSize(too.width - 380, too.height);
     }
 }
