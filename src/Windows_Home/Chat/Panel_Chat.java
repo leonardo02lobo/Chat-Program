@@ -1,6 +1,7 @@
 package Windows_Home.Chat;
 
 import Utils.Var_necessary;
+import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -11,7 +12,7 @@ public class Panel_Chat extends JPanel {
 
     public Panel_Chat() {
         super.setLayout(null);
-        super.setBackground(Var_necessary.color);
+        super.setBackground(Color.GREEN);
         super.setLocation(0, 0);
         super.setSize(too.width - 380, too.height);
         JTextField a = new JTextField();

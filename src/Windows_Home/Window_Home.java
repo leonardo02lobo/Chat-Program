@@ -2,6 +2,7 @@ package Windows_Home;
 
 import Utils.Var_necessary;
 import Windows_Home.Chat.Panel_Chat;
+import Windows_Home.Setting.Setting_Panel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -34,15 +35,25 @@ public class Window_Home extends JPanel {
         switch (Position) {
             case 0:
                 Change_Panels(chat);
+                content = chat;
                 break;
             case 1:
                 Change_Panels(community);
+                content = community;
                 break;
             case 2:
                 Change_Panels(ia);
+                content = ia;
                 break;
             case 3:
                 Change_Panels(compiler);
+                content = compiler;
+                break;
+            case 4:
+                Change_Panels_Setting(setting);
+                break;
+            case 5:
+                Change_Panels(diagonal,panel,content);
                 break;
         }
     }
@@ -54,6 +65,25 @@ public class Window_Home extends JPanel {
         panel.repaint();
         timer.stop();
     }
+    
+    private void Change_Panels_Setting(JPanel content) {
+        super.removeAll();
+        super.add(content,BorderLayout.CENTER);
+        super.revalidate();
+        super.repaint();
+        timer.stop();
+    }
+    
+    private void Change_Panels(JPanel diagonal,JPanel content,JPanel content2) {
+        super.removeAll();
+        super.add(diagonal);
+        super.add(content);
+        content.add(content2);
+        super.revalidate();
+        super.repaint();
+        timer.stop();
+    }
+    
     public static Timer timer;
     public static byte Position;
     JPanel panel = new JPanel();
@@ -63,4 +93,6 @@ public class Window_Home extends JPanel {
     Panel_AI ia = new Panel_AI();
     Panel_Compiler compiler = new Panel_Compiler();
     Diagonal_Panel diagonal = new Diagonal_Panel();
+    JPanel content = new JPanel();
+    Setting_Panel setting = new Setting_Panel();
 }
