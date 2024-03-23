@@ -1,54 +1,62 @@
 package Windows_Home.Setting;
 
-import Windows_Home.Diagonal_Panel;
-import Windows_Home.Window_Home;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
-public class Setting_Panel extends JPanel{
+public class Setting_Panel extends JPanel {
+
     Dimension too = super.getToolkit().getScreenSize();
-    public Setting_Panel(){
+
+    public Setting_Panel() {
         super.setLayout(null);
         super.setSize(too);
-        super.setBackground(Color.red);
-        super.setLocation(0,0);
-        init();
-    }
-    
-    private void init(){
-        JButton a = new JButton("<---");
-        a.setBounds(20,20,100,40);
-        super.add(a);
-        a.addMouseListener(new MouseListener() {
+        super.setLocation(0, 0);
+        timer = new Timer(1000 / 60, new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                Window_Home.timer.start();
-                Window_Home.Position = 5;
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
+            public void actionPerformed(ActionEvent e) {
+                Current();
             }
         });
+        timer.start();
+        panel.setLayout(null);
+        panel.setSize(too.width-273, too.height);
+        panel.setLocation(273, 0);
+        super.add(panel);
+        super.add(diagonal_setting);
     }
-    
+
+    private void Current() {
+        switch (index) {
+            case 0:
+                Change_Panels(panel_setting);
+                break;
+                case 1:
+                Change_Panels(panel_User);
+                break;
+                case 2:
+                Change_Panels(panel_Help);
+                break;
+        }
+    }
+
+    private void Change_Panels(JPanel content) {
+        panel.removeAll();
+        panel.add(content, BorderLayout.CENTER);
+        panel.revalidate();
+        panel.repaint();
+        timer.stop();
+    }
+
+    public static byte index = 0;
     JPanel panel = new JPanel();
-    Diagonal_Panel diagonal = new Diagonal_Panel();
+    public static Timer timer;
+    Diagonal_Setting diagonal_setting = new Diagonal_Setting();
+    Panel_setting panel_setting = new Panel_setting();
+    Panel_User panel_User = new Panel_User();
+    Panel_Help panel_Help = new Panel_Help();
 }

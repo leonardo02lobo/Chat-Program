@@ -24,7 +24,7 @@ public class Diagonal_Panel extends JPanel {
     private void init() {
         initLabel((getWidth() / 2) - 150, getHeight() - 700, 50, 30, label_chat, "Chat");
         initLabel(getWidth() / 2, getHeight() - 700, 150, 30, label_Community, "Community");
-        initLabel(getWidth() - 100, getHeight() - 750, 100, 50, setting, "...");
+        initLabel(getWidth() - 100, getHeight() - 770, 100, 50, setting, "Setting");
     }
 
     private void initLabel(int x, int y, int width, int height, JLabel label, String text) {
