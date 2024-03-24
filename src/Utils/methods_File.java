@@ -12,7 +12,14 @@ public class methods_File {
 
     String file = "database.txt";
     int counter = 0;
-    Panel_Sign_in sign = new Panel_Sign_in();
+    String us, pass;
+    public static String Dataname = "";
+    Data_UserName username = new Data_UserName();
+
+    public void setDatos(String us, String pass) {
+        this.us = us;
+        this.pass = pass;
+    }
 
     public void Read_File() throws IOException {
         try {
@@ -40,15 +47,20 @@ public class methods_File {
     }
 
     public void tokens2(String date2) {
-        String name = "";
-        String user = "";
-        String password = "";
         for (int i = 0; i < counter / 2; i++) {
             String[] word2 = date2.split(";");
-            name = word2[0];
-            user = word2[1];
-            password = word2[2];
+            username.setName(word2[0]);
+            username.setUser(word2[1]);
+            username.setPassword(word2[2]);
+            ValiditySesion(username.getUser(), username.getPassword(),username.getName());
         }
-        sign.CompareDate(user, password);
+    }
+
+    public void ValiditySesion(String user, String password,String name) {
+
+        if (user.equals(us) && password.equals(pass)) {
+            Dataname = name;
+            Panel_Sign_in.band = true;
+        }
     }
 }

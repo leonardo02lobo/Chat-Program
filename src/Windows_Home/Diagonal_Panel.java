@@ -19,10 +19,10 @@ public class Diagonal_Panel extends JPanel{
         init();
     }
     private void init() {
-        initLabel(labelChat, 20, 20, widthImg, heightImg, imgChat);
-        initLabel(labelCommunity, 20, 140, widthImg, heightImg, imgCommunity);
-        initLabel(labelIA, 20, 260, widthImg, heightImg, imgIA);
-        initLabel(labelCompiler, 20, 380, widthImg, heightImg, imgCompiler);
+        initLabel(labelChat, getWidth()/7+1, 20, widthImg, heightImg, imgChat);
+        initLabel(labelCommunity, getWidth()/7+1, 140, widthImg, heightImg, imgCommunity);
+        initLabel(labelIA, getWidth()/7+1, 260, widthImg, heightImg, imgIA);
+        initLabel(labelCompiler, getWidth()/7+1, 380, widthImg, heightImg, imgCompiler);
     }
 
     private void initLabel(JLabel label, int x, int y, int width, int height, Image img) {
@@ -32,6 +32,15 @@ public class Diagonal_Panel extends JPanel{
         label.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                if(e.getSource().equals(labelChat)){
+                    Window_Home.Posicion = 0;
+                }else if(e.getSource().equals(labelCommunity)){
+                    Window_Home.Posicion = 1;
+                }else if(e.getSource().equals(labelIA)){
+                    Window_Home.Posicion = 2;
+                }else if(e.getSource().equals(labelCompiler)){
+                    Window_Home.Posicion = 3;
+                }
             }
 
             @Override

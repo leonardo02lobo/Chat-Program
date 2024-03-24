@@ -1,10 +1,13 @@
-package Window;
+package Windows_Home;
 
-//@author Lio
-import Principal.App;
+import Utils.Var_necessary;
+import Utils.methods_File;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,20 +25,36 @@ public class Navigation_Bar extends JPanel {
     }
 
     private void init() {
-        System.out.println(getHeight());
-        initLabel(labelUser, getWidth()-100, getHeight()/5, 60, 60, imgUser);
-        initLabel(labelFriend, getWidth()-200, getHeight()/5, 60, 60, imgFriend);
+        name.setText(methods_File.Dataname);
+        name.setBounds(getWidth() - 350, getHeight() / 2, 200, 30);
+        name.setFont(new Font(Var_necessary.type, 1, 20));
+        name.setForeground(Color.white);
+        super.add(name);
+        initLabel(labelUser, getWidth() - 100, getHeight() / 5, 60, 60, imgUser);
+        initLabel(labelFriend, getWidth() - 200, getHeight() / 5, 60, 60, imgFriend);
     }
-    
+
     private void initLabel(JLabel label, int x, int y, int width, int height, Image img) {
         label.setIcon(new ImageIcon(img.getScaledInstance(width, height, Image.SCALE_SMOOTH)));
         label.setBounds(x, y, width, height);
         super.add(label);
+        label.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getSource().equals(labelUser)) {
+                    Window_Home.Posicion = 4;
+                } else if (e.getSource().equals(labelFriend)) {
+                    Window_Home.Posicion = 5;
+                }
+            }
+        });
     }
 
+    int aux1 = 0;
     Image imgFriend = new ImageIcon(getClass().getResource("../Multimedia/Icon-Friend.png")).getImage();
     Image imgUser = new ImageIcon(getClass().getResource("../Multimedia/Icon-User.png")).getImage();
     JLabel labelFriend = new JLabel();
     JLabel labelUser = new JLabel();
+    JLabel name = new JLabel();
 
 }
