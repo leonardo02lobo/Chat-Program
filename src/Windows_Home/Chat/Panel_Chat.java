@@ -4,7 +4,6 @@ import Utils.Var_necessary;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class Panel_Chat extends JPanel {
 
@@ -15,9 +14,6 @@ public class Panel_Chat extends JPanel {
         super.setBackground(Color.GREEN);
         super.setLocation(0, 0);
         super.setSize(too.width - 380, too.height);
-        JTextField a = new JTextField();
-        a.setBounds(20,20,100,20);
-        add(a);
     }
 
 }

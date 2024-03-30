@@ -21,7 +21,7 @@ public class App {
         windowApp.setTitle("Chat Para Programadores");
         windowApp.setIconImage(app.icon);
         windowApp.setSize(App.width, App.height);
-        windowApp.setResizable(true);
+        windowApp.setResizable(false);
         windowApp.setLocationRelativeTo(null);
         windowApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         windowApp.setVisible(true);

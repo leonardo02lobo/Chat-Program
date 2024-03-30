@@ -15,7 +15,7 @@ public class Diagonal_Panel extends JPanel {
 
     public Diagonal_Panel() {
         super.setLayout(null);
-        super.setBackground(Color.gray);
+        super.setBackground(Var_necessary.color);
         super.setLocation(0, 0);
         super.setSize(365, too.height);
         init();
@@ -25,6 +25,7 @@ public class Diagonal_Panel extends JPanel {
         initLabel((getWidth() / 2) - 150, getHeight() - 700, 50, 30, label_chat, "Chat");
         initLabel(getWidth() / 2, getHeight() - 700, 150, 30, label_Community, "Community");
         initLabel(getWidth() - 100, getHeight() - 770, 100, 50, setting, "Setting");
+        initLabel(getWidth()-355, getHeight() - 770, 150, 50, logo, "Chat Programer");
     }
 
     private void initLabel(int x, int y, int width, int height, JLabel label, String text) {
@@ -56,7 +57,9 @@ public class Diagonal_Panel extends JPanel {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                label.setForeground(Color.gray);
+                if(e.getSource() != logo){
+                    label.setForeground(Color.gray);
+                }
             }
 
             @Override
@@ -69,4 +72,5 @@ public class Diagonal_Panel extends JPanel {
     JLabel label_chat = new JLabel();
     JLabel label_Community = new JLabel();
     JLabel setting = new JLabel();
+    JLabel logo = new JLabel();
 }

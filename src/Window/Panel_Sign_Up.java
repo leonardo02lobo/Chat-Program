@@ -1,7 +1,7 @@
 package Window;
 
 import Utils.methods_File;
-import Utils.necessary_methods;
+import Utils.necessary_methods_Login;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,12 +22,13 @@ public class Panel_Sign_Up extends JPanel {
     }
 
     private void init() {
-        methods.initLabel(this, label_name, (getWidth() / 2) - 150, (getHeight() / 2) - 230, 150, 30, "NAME");
-        methods.initTextField(this, name, (getWidth() / 2) - 150, (getHeight() / 2) - 200, 300, 30);
-        methods.initLabel(this, label_user, (getWidth() / 2) - 150, (getHeight() / 2) - 130, 150, 30, "USERNAME");
-        methods.initTextField(this, user, (getWidth() / 2) - 150, (getHeight() / 2) - 100, 300, 30);
-        methods.initLabel(this, label_password, (getWidth() / 2) - 150, (getHeight() / 2) - 30, 150, 30, "PASSWORD");
-        methods.initTextField(this, password, (getWidth() / 2) - 150, (getHeight() / 2), 300, 30);
+        necessary_methods_Login.initLabel(this, label_name, (getWidth() / 2) - 150, (getHeight() / 2) - 230, 150, 30, "NAME");
+        necessary_methods_Login.initTextField(this, name, (getWidth() / 2) - 150, (getHeight() / 2) - 200, 300, 30);
+        necessary_methods_Login.initLabel(this, label_user, (getWidth() / 2) - 150, (getHeight() / 2) - 130, 150, 30, "USERNAME");
+        necessary_methods_Login.initTextField(this, user, (getWidth() / 2) - 150, (getHeight() / 2) - 100, 300, 30);
+        necessary_methods_Login.initLabel(this, label_password, (getWidth() / 2) - 150, (getHeight() / 2) - 30, 150, 30, "PASSWORD");
+        necessary_methods_Login.initTextField(this, password, (getWidth() / 2) - 150, (getHeight() / 2), 300, 30);
+        necessary_methods_Login.initLabel(panel, warning, getWidth() - 350, getHeight() - 50, 400, 30, "");
         initButton(button, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, "REGISTER");
     }
 
@@ -43,16 +44,14 @@ public class Panel_Sign_Up extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (name.getText().equals("") && user.getText().equals("") && password.getText().equals("")) {
-                    methods.initLabel(panel, warning, getWidth() - 350, getHeight() - 50, 400, 30, "Algo salio mal, Intenta nuevamente");
+                    necessary_methods_Login.initLabel(panel, warning, getWidth() - 350, getHeight() - 50, 400, 30, "Algo salio mal, Intenta nuevamente");
                 } else {
                     file.write_File(user.getText(), password.getText(), name.getText());
-                    methods.initLabel(panel, warning, getWidth() - 350, getHeight() - 50, 400, 30, "Datos Agregados,Volver al Sign in");
+                    necessary_methods_Login.initLabel(panel, warning, getWidth() - 350, getHeight() - 50, 400, 30, "Datos Agregados,Volver al Sign in");
                 }
             }
         });
     }
-
-    necessary_methods methods = new necessary_methods();
     methods_File file = new methods_File();
     JLabel label_name = new JLabel();
     JTextField name = new JTextField();
