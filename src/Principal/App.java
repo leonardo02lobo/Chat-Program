@@ -6,7 +6,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class App {
-
     public static int width = 1000;
     public static int height = 700;
     public static JFrame windowApp2 = new JFrame();
@@ -21,7 +20,7 @@ public class App {
         windowApp.setTitle("Chat Para Programadores");
         windowApp.setIconImage(app.icon);
         windowApp.setSize(App.width, App.height);
-        windowApp.setResizable(true);
+        windowApp.setResizable(false);
         windowApp.setLocationRelativeTo(null);
         windowApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         windowApp.setVisible(true);

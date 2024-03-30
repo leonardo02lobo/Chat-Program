@@ -3,7 +3,7 @@ package Window;
 import Windows_Home.Window_Home;
 import Principal.App;
 import Utils.methods_File;
-import Utils.necessary_methods;
+import Utils.necessary_methods_Login;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -30,11 +30,11 @@ public class Panel_Sign_in extends JPanel {
     }
 
     private void init() {
-        methods.initLabel(this, label_username, (getWidth() / 2) - 150, getHeight() - 430, 150, 30, "USERNAME");
-        methods.initTextField(this, username, (getWidth() / 2) - 150, getHeight() - 400, 300, 30);
-        methods.initLabel(this, label_password, (getWidth() / 2) - 150, getHeight() - 330, 150, 30, "PASSWORD");
-        methods.initTextField(this, password, (getWidth() / 2) - 150, getHeight() - 300, 300, 30);
-        methods.initCheck(this, lic_sign_in, (getWidth() / 2) - 150, getHeight() - 200, 150, 30, "KEEP ME SIGN IN");
+        necessary_methods_Login.initLabel(this, label_username, (getWidth() / 2) - 150, getHeight() - 430, 150, 30, "USERNAME");
+        necessary_methods_Login.initTextField(this, username, (getWidth() / 2) - 150, getHeight() - 400, 300, 30);
+        necessary_methods_Login.initLabel(this, label_password, (getWidth() / 2) - 150, getHeight() - 330, 150, 30, "PASSWORD");
+        necessary_methods_Login.initTextField(this, password, (getWidth() / 2) - 150, getHeight() - 300, 300, 30);
+        necessary_methods_Login.initCheck(this, lic_sign_in, (getWidth() / 2) - 150, getHeight() - 200, 150, 30, "KEEP ME SIGN IN");
         initButton(button_sign_in, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, "SIGN IN");
     }
 
@@ -58,7 +58,7 @@ public class Panel_Sign_in extends JPanel {
                     if ((lic_sign_in.isSelected()) && band) {
                         OpenWindow();
                     } else {
-                        methods.initLabel(panel, warning, getWidth()-350, getHeight()-100, 350, 30, "Algo salio mal, Intenta nuevamente");
+                        necessary_methods_Login.initLabel(panel, warning, getWidth()-350, getHeight()-100, 350, 30, "Algo salio mal, Intenta nuevamente");
                     }
                 } catch (IOException ex) {
                     Logger.getLogger(Panel_Sign_in.class.getName()).log(Level.SEVERE, null, ex);
@@ -84,7 +84,6 @@ public class Panel_Sign_in extends JPanel {
 
     public static boolean band = false;
     Dimension too = super.getToolkit().getScreenSize();
-    necessary_methods methods = new necessary_methods();
     JLabel sign_in = new JLabel();
     JLabel sign_up = new JLabel();
     JLabel label_username = new JLabel();

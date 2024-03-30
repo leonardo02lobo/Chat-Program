@@ -7,9 +7,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class necessary_methods {
+public class necessary_methods_Login {
 
-    public void initLabel(JPanel panel, JLabel label, int x, int y, int width, int height, String text) {
+    public static void initLabel(JPanel panel, JLabel label, int x, int y, int width, int height, String text) {
         label.setText(text);
         label.setFont(new Font(Var_necessary.type, 1, 20));
         label.setForeground(Color.cyan);
@@ -17,13 +17,13 @@ public class necessary_methods {
         panel.add(label);
     }
 
-    public void initTextField(JPanel panel, JTextField textField, int x, int y, int width, int height) {
+    public static void initTextField(JPanel panel, JTextField textField, int x, int y, int width, int height) {
         textField.setBounds(x, y, width, height);
         textField.setFont(new Font(Var_necessary.type, 1, 20));
         panel.add(textField);
     }
 
-    public void initCheck(JPanel panel, JCheckBox check, int x, int y, int width, int height, String text) {
+    public static void initCheck(JPanel panel, JCheckBox check, int x, int y, int width, int height, String text) {
         check.setText(text);
         check.setBounds(x, y, width, height);
         check.setForeground(Color.white);
