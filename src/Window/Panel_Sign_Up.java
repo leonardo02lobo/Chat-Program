@@ -1,13 +1,14 @@
 package Window;
 
+import Utils.methods_File;
 import Utils.necessary_methods;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Panel_Sign_Up extends JPanel {
@@ -37,25 +38,29 @@ public class Panel_Sign_Up extends JPanel {
         button.setForeground(Color.white);
         button.setOpaque(false);
         super.add(button);
+        panel = this;
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(name.equals("") && user.equals("") && password.equals("")){
-                    
-                }else{
-                    JOptionPane.showMessageDialog(null, "Datos Agregados, Por favor Volver al Sign in");
+                if (name.getText().equals("") && user.getText().equals("") && password.getText().equals("")) {
+                    methods.initLabel(panel, warning, getWidth() - 350, getHeight() - 50, 400, 30, "Algo salio mal, Intenta nuevamente");
+                } else {
+                    file.write_File(user.getText(), password.getText(), name.getText());
+                    methods.initLabel(panel, warning, getWidth() - 350, getHeight() - 50, 400, 30, "Datos Agregados,Volver al Sign in");
                 }
             }
         });
     }
 
     necessary_methods methods = new necessary_methods();
+    methods_File file = new methods_File();
     JLabel label_name = new JLabel();
     JTextField name = new JTextField();
     JLabel label_user = new JLabel();
     JTextField user = new JTextField();
     JLabel label_password = new JLabel();
-    JTextField password = new JTextField();
+    JPasswordField password = new JPasswordField();
     JButton button = new JButton();
     JLabel warning = new JLabel();
+    JPanel panel = new JPanel();
 }

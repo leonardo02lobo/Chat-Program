@@ -4,3 +4,6 @@ Lio Perozo;LioPerozo12;lio12
 Moises Becerra;Moisesdavid2109;moises2109
 Manuel Ramirez;Manu17;manuel17
 lionel Gutierrez;lionel14;lionel18
+Leonardo Jose;Leonardo;leonardo
+Lionel;lionel;lionel
+Lio;leo;123

@@ -16,6 +16,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Panel_Sign_in extends JPanel {
@@ -68,17 +69,16 @@ public class Panel_Sign_in extends JPanel {
 
     private void OpenWindow() {
         Window_Home window = new Window_Home();
-        JFrame windowApp = new JFrame();
         App app = new App();
-        windowApp.add(window);
-        windowApp.pack();
-        windowApp.setIconImage(app.icon);
-        windowApp.setTitle("Chat Para Programadores");
-        windowApp.setSize(too);
-        windowApp.setResizable(true);
-        windowApp.setLocationRelativeTo(null);
-        windowApp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        windowApp.setVisible(true);
+        App.windowApp2.add(window);
+        App.windowApp2.pack();
+        App.windowApp2.setIconImage(app.icon);
+        App.windowApp2.setTitle("Chat Para Programadores");
+        App.windowApp2.setSize(too);
+        App.windowApp2.setResizable(true);
+        App.windowApp2.setLocationRelativeTo(null);
+        App.windowApp2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        App.windowApp2.setVisible(true);
         App.windowApp.dispose();
     }
 
@@ -90,7 +90,7 @@ public class Panel_Sign_in extends JPanel {
     JLabel label_username = new JLabel();
     JTextField username = new JTextField();
     JLabel label_password = new JLabel();
-    JTextField password = new JTextField();
+    JPasswordField password = new JPasswordField();
     JCheckBox lic_sign_in = new JCheckBox();
     JButton button_sign_in = new JButton();
     JLabel linea = new JLabel();

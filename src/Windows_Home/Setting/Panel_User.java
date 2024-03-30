@@ -1,17 +1,16 @@
-package Windows_Home;
+package Windows_Home.Setting;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 
-public class Panel_Community extends JPanel{
-    
+public class Panel_User extends JPanel{
     Dimension too = super.getToolkit().getScreenSize();
 
-    public Panel_Community() {
+    public Panel_User() {
         super.setLayout(null);
-        super.setBackground(Color.GRAY);
+        super.setBackground(Color.GREEN);
+        super.setSize(too.width-273, too.height);
         super.setLocation(0, 0);
-        super.setSize(too.width - 380, too.height);
     }
 }
