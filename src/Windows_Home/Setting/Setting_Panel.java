@@ -55,7 +55,7 @@ public class Setting_Panel extends JPanel {
     JPanel panel = new JPanel();
     public static Timer timer;
     Diagonal_Setting diagonal_setting = new Diagonal_Setting();
-    Panel_setting panel_setting = new Panel_setting();
+    Panel_Aparencia panel_setting = new Panel_Aparencia();
     Panel_User panel_User = new Panel_User();
     Panel_Help panel_Help = new Panel_Help();
 }
