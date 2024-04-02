@@ -13,7 +13,7 @@ public class Panel_Aparencia extends JPanel {
 
     public Panel_Aparencia() {
         Palabras_Del_Programa.pantalla = "configuracion";
-        Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion_Apariencia-español.txt");
+        Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion-español.txt");
         super.setLayout(null);
         super.setBackground(Variables_Globales.Color);
         super.setSize(too.width - 273, too.height);
@@ -22,10 +22,10 @@ public class Panel_Aparencia extends JPanel {
     }
 
     private void init() {
-        Metodos_Configuracion.iniciarComponentes(this, configuracion_Principal, getWidth() / 2, 20, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[0]);
-        Metodos_Configuracion.iniciarComponentes(this, CambiarColor, 20, 100, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[1]);
+        Metodos_Configuracion.iniciarComponentes(this, configuracion_Principal, (getWidth() / 2)-200, 20, 300, 30, Palabras_Del_Programa.palabrasConfiguracion[5]);
+        Metodos_Configuracion.iniciarComponentes(this, CambiarColor, 20, 100, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[6]);
         iniciarBotones(this, BotonCambiarColor, getWidth() - 250, 100, 200, 30, "Blanco");
-        Metodos_Configuracion.iniciarComponentes(this, CambiarIdioma, 20, 150, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[2]);
+        Metodos_Configuracion.iniciarComponentes(this, CambiarIdioma, 20, 150, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[7]);
         iniciarComboxBox(this, idiomas, getWidth() - 250, 150, 200, 30);
     }
 
@@ -54,12 +54,11 @@ public class Panel_Aparencia extends JPanel {
         combo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 Palabras_Del_Programa.pantalla = "configuracion";
                 if (combo.getSelectedIndex() == 0) {
-                    Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion_Apariencia-español.txt");
+                    Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion-español.txt");
                 } else if (combo.getSelectedIndex() == 1) {
-                    Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion_Apariencia-ingles.txt");
+                    Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion-ingles.txt");
                 }
                 init();
             }
