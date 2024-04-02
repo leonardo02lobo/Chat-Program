@@ -5,12 +5,15 @@ import utilidades_del_programa.Variables_Globales;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import utilidades_del_programa.Palabras_Del_Programa;
 
 public class Panel_Aparencia extends JPanel {
 
     Dimension too = super.getToolkit().getScreenSize();
 
     public Panel_Aparencia() {
+        Palabras_Del_Programa.pantalla = "configuracion";
+        Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion_Apariencia-español.txt");
         super.setLayout(null);
         super.setBackground(Variables_Globales.Color);
         super.setSize(too.width - 273, too.height);
@@ -19,9 +22,11 @@ public class Panel_Aparencia extends JPanel {
     }
 
     private void init() {
-        Metodos_Configuracion.iniciarComponentes(this, configuracion_Principal, getWidth() / 2, 20, 200, 30, "Configuracion");
-        Metodos_Configuracion.iniciarComponentes(this, CambiarColor, 20, 100, 200, 30, "Cambiar Tema");
-        iniciarBotones(this, BotonCambiarColor, getWidth()-250, 100, 200, 30, "Blanco");
+        Metodos_Configuracion.iniciarComponentes(this, configuracion_Principal, getWidth() / 2, 20, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[0]);
+        Metodos_Configuracion.iniciarComponentes(this, CambiarColor, 20, 100, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[1]);
+        iniciarBotones(this, BotonCambiarColor, getWidth() - 250, 100, 200, 30, "Blanco");
+        Metodos_Configuracion.iniciarComponentes(this, CambiarIdioma, 20, 150, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[2]);
+        iniciarComboxBox(this, idiomas, getWidth() - 250, 150, 200, 30);
     }
 
     private void iniciarBotones(JPanel panel, JToggleButton boton, int x, int y, int ancho, int alto, String texto) {
@@ -42,9 +47,28 @@ public class Panel_Aparencia extends JPanel {
             }
         });
     }
-    
+
+    private void iniciarComboxBox(JPanel panel, JComboBox combo, int x, int y, int ancho, int alto) {
+        combo.setBounds(x, y, ancho, alto);
+        panel.add(combo);
+        combo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Palabras_Del_Programa.pantalla = "configuracion";
+                if (combo.getSelectedIndex() == 0) {
+                    Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion_Apariencia-español.txt");
+                } else if (combo.getSelectedIndex() == 1) {
+                    Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion_Apariencia-ingles.txt");
+                }
+                init();
+            }
+        });
+    }
+
     JLabel configuracion_Principal = new JLabel();
     JLabel CambiarColor = new JLabel();
     JToggleButton BotonCambiarColor = new JToggleButton();
     JLabel CambiarIdioma = new JLabel();
+    JComboBox idiomas = new JComboBox(new String[]{"Español", "Ingles"});
 }

@@ -18,10 +18,11 @@ public class Panel_Diagonal_De_Configuracion extends JPanel {
     }
 
     private void init() {
-        iniciarLabel(this, Diagonal_Atras, 20, 20, 100, 40, "Atras");
-        iniciarLabel(this, Panel_Diagonal_Apariencia, 20, 100, 100, 40, "Setting");
-        iniciarLabel(this, Panel_Diagonal_Usuario, 20, 150, 100, 40, "User");
-        iniciarLabel(this, Panel_Diagonal_Ayuda, 20, 200, 100, 40, "Help");
+        iniciarLabel(this, Diagonal_Atras, 20, 20, 100, 40, "Volver");
+        iniciarLabel(this, Diagonal_Configuracion, getWidth()-150, 20, 150, 40, "Configuracion");
+        iniciarLabel(this, Panel_Diagonal_Apariencia, 20, 100, 100, 40, "Aparencia");
+        iniciarLabel(this, Panel_Diagonal_Usuario, 20, 150, 100, 40, "Usuario");
+        iniciarLabel(this, Panel_Diagonal_Ayuda, 20, 200, 100, 40, "Ayuda");
     }
 
     private void iniciarLabel(JPanel panel, JLabel label, int x, int y, int ancho, int alto, String texto) {
@@ -51,4 +52,5 @@ public class Panel_Diagonal_De_Configuracion extends JPanel {
     JLabel Panel_Diagonal_Usuario = new JLabel();
     JLabel Panel_Diagonal_Ayuda = new JLabel();
     JLabel Diagonal_Atras = new JLabel();
+    JLabel Diagonal_Configuracion = new JLabel();
 }

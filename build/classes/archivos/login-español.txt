@@ -1,0 +1,10 @@
+Iniciar Sesion
+Registrarse
+Usuario
+Contraseña
+Selecciona para Iniciar
+Iniciar Sesion
+Nombre
+Usuario
+Contraseña
+Registrarse
