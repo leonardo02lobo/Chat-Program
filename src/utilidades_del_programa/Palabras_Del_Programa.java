@@ -25,6 +25,10 @@ public class Palabras_Del_Programa {
         for (int i = 0; i < palabra.length; i++) {
             if (pantalla.equals("configuracion")) {
                 palabrasConfiguracion[i] = palabra[i];
+            }else if(pantalla.equals("login")){
+                palabrasLogin[i] = palabra[i];
+            }else if(pantalla.equals("inicio")){
+                palabrasInicio[i] = palabra[i];
             }
         }
     }
@@ -41,6 +45,9 @@ public class Palabras_Del_Programa {
         variables_Login.Iniciar_Sesion, variables_Login.Registrarse, variables_Login.Usuario_IniciarSesion, variables_Login.Contraseña_IniciarSesion,
         variables_Login.Selecciona_para_Iniciar_IniciarSesion, variables_Login.Iniciar_Sesion_IniciarSesion_Boton, variables_Login.Nombre_Registrarse,
         variables_Login.Usuario_Registrarse, variables_Login.Contraseña_Registrarse, variables_Login.Registrarse_Registrarse_Boton
+    };
+    public static String[] palabrasInicio = {
+        variables_Inicio.chat,variables_Inicio.comunidad,variables_Inicio.ajustes,variables_Inicio.chat_programer
     };
 }
 
@@ -68,4 +75,11 @@ class variables_Configuracion {
     public static String Apariencia_Configuracion;
     public static String Cambiar_Color_Configuracion;
     public static String Cambiar_Idioma_Configuracion;
+}
+
+class variables_Inicio{
+    public static String chat;
+    public static String comunidad;
+    public static String ajustes;
+    public static String chat_programer;
 }

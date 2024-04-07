@@ -1,6 +1,5 @@
 package utilidades_del_programa;
 
-import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -11,7 +10,7 @@ public class Metodos_Configuracion {
         label.setText(texto);
         label.setFont(new Font(Variables_Globales.Tipo_Letra, 1, 20));
         label.setBounds(x, y, ancho, alto);
-        label.setForeground(Color.white);
+        label.setForeground(Variables_Globales.ColorLetras);
         panel.add(label);
     }
 }

@@ -1,6 +1,6 @@
 package Ventana_De_Inicio;
 
-import utilidades_del_programa.Variables_Globales;
+import utilidades_del_programa.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -11,23 +11,30 @@ public class Panel_Diagonal extends JPanel {
 
     public Panel_Diagonal() {
         super.setLayout(null);
-        super.setBackground(Variables_Globales.Color);
         super.setLocation(0, 0);
         super.setSize(365, too.height);
-        init();
+        Timer tiempo = new Timer(1000 / 60, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cambiarIdiomaInicio();
+                setBackground(Variables_Globales.Color);
+                init();
+            }
+        });
+        tiempo.start();
     }
 
     private void init() {
-        iniciarLabel((getWidth() / 2) - 150, 90, 50, 30, Chat_Label, "Chat");
-        iniciarLabel(getWidth() / 2, 90, 150, 30, Comunidad_Label, "Community");
-        iniciarLabel(getWidth() - 100, 20, 100, 50, Configuracion_Label, "Setting");
-        iniciarLabel(getWidth()-355, 20, 150, 50, Label_Logo, "Chat Programer");
+        iniciarLabel((getWidth() / 2) - 150, 90, 50, 30, Chat_Label, Palabras_Del_Programa.palabrasInicio[0]);
+        iniciarLabel(getWidth() / 2, 90, 150, 30, Comunidad_Label, Palabras_Del_Programa.palabrasInicio[1]);
+        iniciarLabel(getWidth() - 100, 20, 100, 50, Configuracion_Label, Palabras_Del_Programa.palabrasInicio[2]);
+        iniciarLabel(getWidth() - 355, 20, 150, 50, Label_Logo, "Chat Programer");
     }
 
     private void iniciarLabel(int x, int y, int ancho, int alto, JLabel label, String texto) {
         label.setText(texto);
         label.setBounds(x, y, ancho, alto);
-        label.setForeground(Color.white);
+        label.setForeground(Variables_Globales.ColorLetras);
         label.setFont(new Font(Variables_Globales.Tipo_Letra, 1, 20));
         super.add(label);
         label.addMouseListener(new MouseAdapter() {
@@ -42,19 +49,16 @@ public class Panel_Diagonal extends JPanel {
                     Variables_Globales.Posicion = 4;
                 }
             }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                if(e.getSource() != Label_Logo){
-                    label.setForeground(Color.gray);
-                }
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                label.setForeground(Color.white);
-            }
         });
+    }
+
+    public static void cambiarIdiomaInicio() {
+        Palabras_Del_Programa.pantalla = "inicio";
+        if (Variables_Globales.CambiarIdioma == 0) {
+            Palabras_Del_Programa.ObtenerArchivo("src/archivos/inicio-español.txt");
+        }else if (Variables_Globales.CambiarIdioma == 1) {
+            Palabras_Del_Programa.ObtenerArchivo("src/archivos/inicio-ingles.txt");
+        }
     }
 
     JLabel Chat_Label = new JLabel();

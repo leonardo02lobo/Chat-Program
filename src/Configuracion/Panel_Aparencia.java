@@ -15,18 +15,28 @@ public class Panel_Aparencia extends JPanel {
         Palabras_Del_Programa.pantalla = "configuracion";
         Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion-español.txt");
         super.setLayout(null);
-        super.setBackground(Variables_Globales.Color);
         super.setSize(too.width - 273, too.height);
         super.setLocation(0, 0);
+        Timer tiempo = new Timer(1000 / 60, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                iniciarComponentes();
+                setBackground(Variables_Globales.Color);
+            }
+        });
+        tiempo.start();
         init();
     }
 
     private void init() {
-        Metodos_Configuracion.iniciarComponentes(this, configuracion_Principal, (getWidth() / 2)-200, 20, 300, 30, Palabras_Del_Programa.palabrasConfiguracion[5]);
-        Metodos_Configuracion.iniciarComponentes(this, CambiarColor, 20, 100, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[6]);
         iniciarBotones(this, BotonCambiarColor, getWidth() - 250, 100, 200, 30, "Blanco");
-        Metodos_Configuracion.iniciarComponentes(this, CambiarIdioma, 20, 150, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[7]);
         iniciarComboxBox(this, idiomas, getWidth() - 250, 150, 200, 30);
+    }
+
+    private void iniciarComponentes() {
+        Metodos_Configuracion.iniciarComponentes(this, configuracion_Principal, (getWidth() / 2) - 200, 20, 300, 30, Palabras_Del_Programa.palabrasConfiguracion[5]);
+        Metodos_Configuracion.iniciarComponentes(this, CambiarColor, 20, 100, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[6]);
+        Metodos_Configuracion.iniciarComponentes(this, CambiarIdioma, 20, 150, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[7]);
     }
 
     private void iniciarBotones(JPanel panel, JToggleButton boton, int x, int y, int ancho, int alto, String texto) {
@@ -40,9 +50,11 @@ public class Panel_Aparencia extends JPanel {
                 if (boton.isSelected()) {
                     boton.setText("Negro");
                     Variables_Globales.Color = new Color(255, 255, 255);
+                    Variables_Globales.ColorLetras = new Color(0, 0, 0);
                 } else {
                     boton.setText("Blanco");
                     Variables_Globales.Color = new Color(10, 15, 20);
+                    Variables_Globales.ColorLetras = new Color(255, 255, 255);
                 }
             }
         });
@@ -56,8 +68,10 @@ public class Panel_Aparencia extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 Palabras_Del_Programa.pantalla = "configuracion";
                 if (combo.getSelectedIndex() == 0) {
+                    Variables_Globales.CambiarIdioma = 0;
                     Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion-español.txt");
                 } else if (combo.getSelectedIndex() == 1) {
+                    Variables_Globales.CambiarIdioma = 1;
                     Palabras_Del_Programa.ObtenerArchivo("src/archivos/configuracion-ingles.txt");
                 }
                 init();

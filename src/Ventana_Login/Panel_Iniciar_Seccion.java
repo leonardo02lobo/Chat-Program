@@ -12,6 +12,7 @@ import javax.swing.*;
 public class Panel_Iniciar_Seccion extends JPanel {
 
     public Panel_Iniciar_Seccion() {
+        Ventana_Login.iniciarLenguajeLogin();
         super.setLayout(null);
         super.setSize(400, 500);
         super.setBackground(new Color(10, 15, 20));
@@ -20,12 +21,12 @@ public class Panel_Iniciar_Seccion extends JPanel {
     }
 
     private void init() {
-        Metodos_Necesarios_Del_Login.iniciarLabel(this, Usuario_Label, (getWidth() / 2) - 150, getHeight() - 430, 150, 30, "USERNAME");
+        Metodos_Necesarios_Del_Login.iniciarLabel(this, Usuario_Label, (getWidth() / 2) - 150, getHeight() - 430, 150, 30, Palabras_Del_Programa.palabrasLogin[2]);
         Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Usuario, (getWidth() / 2) - 150, getHeight() - 400, 300, 30);
-        Metodos_Necesarios_Del_Login.iniciarLabel(this, Contrasenia_Label, (getWidth() / 2) - 150, getHeight() - 330, 150, 30, "PASSWORD");
+        Metodos_Necesarios_Del_Login.iniciarLabel(this, Contrasenia_Label, (getWidth() / 2) - 150, getHeight() - 330, 150, 30, Palabras_Del_Programa.palabrasLogin[3]);
         Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Contrasenia, (getWidth() / 2) - 150, getHeight() - 300, 300, 30);
-        Metodos_Necesarios_Del_Login.iniciarCheck(this, Licencia_Inicio_Seccion, (getWidth() / 2) - 150, getHeight() - 200, 150, 30, "KEEP ME SIGN IN");
-        iniciarBoton(Boton_Iniciar_Seccion, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, "SIGN IN");
+        Metodos_Necesarios_Del_Login.iniciarCheck(this, Licencia_Inicio_Seccion, (getWidth() / 2) - 150, getHeight() - 200, 250, 30, Palabras_Del_Programa.palabrasLogin[4]);
+        iniciarBoton(Boton_Iniciar_Seccion, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, Palabras_Del_Programa.palabrasLogin[5]);
     }
 
     private void iniciarBoton(JButton boton, int x, int y, int ancho, int alto, String texto) {

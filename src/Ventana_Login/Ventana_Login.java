@@ -7,12 +7,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import utilidades_del_programa.*;
 
 public class Ventana_Login extends JPanel {
 
-    public Ventana_Login() {
+    public Ventana_Login() { 
+        iniciarLenguajeLogin();
         super.setSize(App.ancho, App.alto);
         super.setLayout(null);
         super.setBackground(new Color(10, 15, 20));
@@ -21,9 +24,9 @@ public class Ventana_Login extends JPanel {
 
     private void init() {
         iniciarPaneles(Panel_Inicio_Seccion);
-        iniciarLabel(IniciarSeccion, (getWidth() / 2) - 150, getHeight() - 600, 100, 30, "SIGN IN");
-        iniciarLabel(linea, (getWidth() / 2) - 140, getHeight() - 585, 100, 30, "_____");
-        iniciarLabel(Registrarse, (getWidth() / 2) + 50, getHeight() - 600, 100, 30, "SIGN UP");
+        iniciarLabel(IniciarSeccion, (getWidth() / 2) - 150, getHeight() - 600, 200, 30, Palabras_Del_Programa.palabrasLogin[0]);
+        iniciarLabel(linea, (getWidth() / 2) - 120, getHeight() - 585, 100, 30, "_____");
+        iniciarLabel(Registrarse, (getWidth() / 2) + 50, getHeight() - 600, 200, 30, Palabras_Del_Programa.palabrasLogin[1]);
     }
 
     private void iniciarLabel(JLabel label, int x, int y, int width, int height, String text) {
@@ -35,11 +38,11 @@ public class Ventana_Login extends JPanel {
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (label.getText() == "SIGN IN") {
-                    iniciarLabel(linea, (getWidth() / 2) - 130, getHeight() - 550, 100, 30, "_____");
+                if (label.getText() == Palabras_Del_Programa.palabrasLogin[0]) {
+                    iniciarLabel(linea, (getWidth() / 2) - 120, getHeight() - 550, 200, 30, "_____");
                     iniciarPaneles(Panel_Inicio_Seccion);
                 } else {
-                    iniciarLabel(linea, (getWidth() / 2) + 70, getHeight() - 550, 100, 30, "_____");
+                    iniciarLabel(linea, (getWidth() / 2) + 70, getHeight() - 550, 200, 30, "_____");
                     iniciarPaneles(Panel_registrarse);
                 }
             }
@@ -54,6 +57,11 @@ public class Ventana_Login extends JPanel {
         add(IniciarSeccion);
         add(Registrarse);
         add(linea);
+    }
+    
+    public static void iniciarLenguajeLogin(){
+        Palabras_Del_Programa.pantalla = "login";
+        Palabras_Del_Programa.ObtenerArchivo("src/archivos/login-español.txt");
     }
 
     Panel_Iniciar_Seccion Panel_Inicio_Seccion = new Panel_Iniciar_Seccion();

@@ -10,10 +10,8 @@ public class Ventana_Inicio extends JPanel {
     public Ventana_Inicio() {
         super.setSize(too);
         super.setLayout(null);
-        super.setBackground(Variables_Globales.Color);
         super.add(Variables_Globales.Panel_Diagonal);
         panel.setLayout(null);
-        panel.setBackground(Variables_Globales.Color);
         panel.setLocation(365, 0);
         panel.setSize(too.width - 380, too.height);
         super.add(panel);

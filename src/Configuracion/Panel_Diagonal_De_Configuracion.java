@@ -11,12 +11,12 @@ public class Panel_Diagonal_De_Configuracion extends JPanel {
 
     public Panel_Diagonal_De_Configuracion() {
         super.setLayout(null);
-        super.setBackground(Variables_Globales.Color);
         super.setSize(too.width / 5, too.height);
         super.setLocation(0, 0);
         Timer tiempo = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                setBackground(Variables_Globales.Color);
                 init();
             }
         });
@@ -34,7 +34,7 @@ public class Panel_Diagonal_De_Configuracion extends JPanel {
     private void iniciarLabel(JPanel panel, JLabel label, int x, int y, int ancho, int alto, String texto) {
         label.setFont(new Font(Variables_Globales.Tipo_Letra, 1, 20));
         label.setText(texto);
-        label.setForeground(Color.white);
+        label.setForeground(Variables_Globales.ColorLetras);
         label.setBounds(x, y, ancho, alto);
         panel.add(label);
         label.addMouseListener(new MouseAdapter() {

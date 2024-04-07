@@ -12,6 +12,7 @@ import javax.swing.*;
 public class Variables_Globales {
     public final static String Tipo_Letra = "Arial";
     public static Color Color = new Color(10, 15, 20);
+    public static Color ColorLetras = new Color(255, 255, 255);
     public static Panel_Chat Panel_Chat = new Panel_Chat();
     public static Panel_Comunidad Panel_Comunidad = new Panel_Comunidad();
     public static Panel_IA Panel_IA = new Panel_IA();
@@ -20,4 +21,5 @@ public class Variables_Globales {
     public static Panel_Configuracion Panel_Configuracion = new Panel_Configuracion();
     public static Timer tiempo;
     public static byte Posicion;
+    public static byte CambiarIdioma = 0;
 }
