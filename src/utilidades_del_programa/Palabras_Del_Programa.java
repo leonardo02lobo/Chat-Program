@@ -23,12 +23,15 @@ public class Palabras_Del_Programa {
     public static void SepararPalabrasEspaniol() {
         String[] palabra = palabras.split(",");
         for (int i = 0; i < palabra.length; i++) {
-            if (pantalla.equals("configuracion")) {
-                palabrasConfiguracion[i] = palabra[i];
-            }else if(pantalla.equals("login")){
-                palabrasLogin[i] = palabra[i];
-            }else if(pantalla.equals("inicio")){
-                palabrasInicio[i] = palabra[i];
+            try {
+                if (pantalla.equals("configuracion")) {
+                    palabrasConfiguracion[i] = palabra[i];
+                } else if (pantalla.equals("login")) {
+                    palabrasLogin[i] = palabra[i];
+                } else if (pantalla.equals("inicio")) {
+                    palabrasInicio[i] = palabra[i];
+                }
+            } catch (Exception e) {
             }
         }
     }
@@ -39,7 +42,7 @@ public class Palabras_Del_Programa {
         variables_Configuracion.Volver_Menu, variables_Configuracion.Configuracion_Menu,
         variables_Configuracion.Apariencia_Menu, variables_Configuracion.Usuario_Menu,
         variables_Configuracion.Ayuda_Menu, variables_Configuracion.Apariencia_Configuracion,
-        variables_Configuracion.Cambiar_Color_Configuracion,variables_Configuracion.Cambiar_Idioma_Configuracion
+        variables_Configuracion.Cambiar_Color_Configuracion, variables_Configuracion.Cambiar_Idioma_Configuracion
     };
     public static String[] palabrasLogin = {
         variables_Login.Iniciar_Sesion, variables_Login.Registrarse, variables_Login.Usuario_IniciarSesion, variables_Login.Contraseña_IniciarSesion,
@@ -47,7 +50,7 @@ public class Palabras_Del_Programa {
         variables_Login.Usuario_Registrarse, variables_Login.Contraseña_Registrarse, variables_Login.Registrarse_Registrarse_Boton
     };
     public static String[] palabrasInicio = {
-        variables_Inicio.chat,variables_Inicio.comunidad,variables_Inicio.ajustes,variables_Inicio.chat_programer
+        variables_Inicio.chat, variables_Inicio.comunidad, variables_Inicio.ajustes, variables_Inicio.chat_programer
     };
 }
 
@@ -77,7 +80,8 @@ class variables_Configuracion {
     public static String Cambiar_Idioma_Configuracion;
 }
 
-class variables_Inicio{
+class variables_Inicio {
+
     public static String chat;
     public static String comunidad;
     public static String ajustes;

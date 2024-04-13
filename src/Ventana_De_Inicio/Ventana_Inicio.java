@@ -68,7 +68,7 @@ public class Ventana_Inicio extends JPanel {
         super.repaint();
         Variables_Globales.tiempo.stop();
     }
-    JPanel panel = new JPanel();
+    public static JPanel panel = new JPanel();
     Dimension too = super.getToolkit().getScreenSize();
     JPanel contenido = new JPanel();
 }

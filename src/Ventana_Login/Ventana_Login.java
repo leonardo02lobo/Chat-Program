@@ -5,11 +5,13 @@ import utilidades_del_programa.Variables_Globales;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import utilidades_del_programa.*;
 
 public class Ventana_Login extends JPanel {
@@ -18,7 +20,13 @@ public class Ventana_Login extends JPanel {
         iniciarLenguajeLogin();
         super.setSize(App.ancho, App.alto);
         super.setLayout(null);
-        super.setBackground(new Color(10, 15, 20));
+        Timer tiempo = new Timer(1000/60, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setBackground(Variables_Globales.Color);
+            }
+        });
+        tiempo.start();
         init();
     }
 
@@ -32,7 +40,14 @@ public class Ventana_Login extends JPanel {
     private void iniciarLabel(JLabel label, int x, int y, int width, int height, String text) {
         label.setText(text);
         label.setFont(new Font(Variables_Globales.Tipo_Letra, 1, 20));
-        label.setForeground(Color.cyan);
+        Timer tiempo = new Timer(1000 / 60, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                label.setForeground(Variables_Globales.ColorLetras);
+
+            }
+        });
+        tiempo.start();
         label.setBounds(x, y, width, height);
         super.add(label);
         label.addMouseListener(new MouseAdapter() {

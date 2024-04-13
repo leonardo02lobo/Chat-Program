@@ -1,5 +1,6 @@
 package Configuracion;
 
+import Principal.App;
 import utilidades_del_programa.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -29,6 +30,7 @@ public class Panel_Diagonal_De_Configuracion extends JPanel {
         iniciarLabel(this, Panel_Diagonal_Apariencia, 20, 100, getWidth(), 40, Palabras_Del_Programa.palabrasConfiguracion[2]);
         iniciarLabel(this, Panel_Diagonal_Usuario, 20, 150, getWidth(), 40, Palabras_Del_Programa.palabrasConfiguracion[3]);
         iniciarLabel(this, Panel_Diagonal_Ayuda, 20, 200, getWidth(), 40, Palabras_Del_Programa.palabrasConfiguracion[4]);
+        iniciarLabel(this, cerrar_Sesion, 20, 650, getWidth(), 40, Palabras_Del_Programa.palabrasConfiguracion[5]);
     }
 
     private void iniciarLabel(JPanel panel, JLabel label, int x, int y, int ancho, int alto, String texto) {
@@ -50,6 +52,9 @@ public class Panel_Diagonal_De_Configuracion extends JPanel {
                     Panel_Configuracion.index = 1;
                 } else if (e.getSource().equals(Panel_Diagonal_Ayuda)) {
                     Panel_Configuracion.index = 2;
+                } else if (e.getSource().equals(cerrar_Sesion)) {
+                    App.Ventana2.dispose();
+                    App.Ventana.setVisible(true);
                 }
             }
         });
@@ -59,4 +64,5 @@ public class Panel_Diagonal_De_Configuracion extends JPanel {
     JLabel Panel_Diagonal_Ayuda = new JLabel();
     JLabel Diagonal_Atras = new JLabel();
     JLabel Diagonal_Configuracion = new JLabel();
+    JLabel cerrar_Sesion = new JLabel();
 }

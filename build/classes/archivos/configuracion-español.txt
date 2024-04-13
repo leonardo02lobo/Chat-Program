@@ -3,6 +3,7 @@ Configuracion
 Apariencia
 Usuario
 Ayuda
+Cerrar Sesion
 Configurar Apariencia
 Cambiar Color
 Cambiar Idioma

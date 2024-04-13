@@ -1,8 +1,9 @@
 package Ventana_De_Inicio;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import javax.swing.JPanel;
+import Chat.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Panel_Compilador extends JPanel{
     
@@ -10,8 +11,20 @@ public class Panel_Compilador extends JPanel{
 
     public Panel_Compilador() {
         super.setLayout(null);
-        super.setBackground(new Color(10, 15, 20));
-        super.setLocation(130, 100);
-        super.setSize(too.width - 145, too.height - 140);
+        super.setBackground(Color.red);
+        super.setLocation(0, 0);
+        super.setSize(too.width - 145, too.height);
+        JButton a = new JButton("volver");
+        a.setBounds(20,20,100,20);
+        add(a);
+        a.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Ventana_Inicio.panel.removeAll();
+                Ventana_Inicio.panel.add(new Panel_Chat(), BorderLayout.CENTER);
+                Ventana_Inicio.panel.revalidate();
+                Ventana_Inicio.panel.repaint();
+            }
+        });
     }
 }

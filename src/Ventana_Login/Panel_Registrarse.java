@@ -11,27 +11,33 @@ public class Panel_Registrarse extends JPanel {
         Ventana_Login.iniciarLenguajeLogin();
         super.setLayout(null);
         super.setSize(400, 500);
-        super.setBackground(new Color(10, 15, 20));
+        Timer tiempo = new Timer(1000/60, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setBackground(Variables_Globales.Color);
+                init();
+            }
+        });
+        tiempo.start();
         super.setLocation(290, 160);
-        init();
+        Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Nombre_Caja, (getWidth() / 2) - 150, (getHeight() / 2) - 200, 300, 30);
+        Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Usuario_Caja, (getWidth() / 2) - 150, (getHeight() / 2) - 100, 300, 30);
+        Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Contrasenia_Caja, (getWidth() / 2) - 150, (getHeight() / 2), 300, 30);
+        iniciarBoton(Boton, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, Palabras_Del_Programa.palabrasLogin[9]);
     }
 
     private void init() {
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Nombre_Label, (getWidth() / 2) - 150, (getHeight() / 2) - 230, 150, 30, Palabras_Del_Programa.palabrasLogin[6]);
-        Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Nombre_Caja, (getWidth() / 2) - 150, (getHeight() / 2) - 200, 300, 30);
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Usuario_Label, (getWidth() / 2) - 150, (getHeight() / 2) - 130, 150, 30, Palabras_Del_Programa.palabrasLogin[7]);
-        Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Usuario_Caja, (getWidth() / 2) - 150, (getHeight() / 2) - 100, 300, 30);
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Contrasenia_Label, (getWidth() / 2) - 150, (getHeight() / 2) - 30, 150, 30, Palabras_Del_Programa.palabrasLogin[8]);
-        Metodos_Necesarios_Del_Login.iniciarCajasDeTexto(this, Contrasenia_Caja, (getWidth() / 2) - 150, (getHeight() / 2), 300, 30);
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Advertencia, getWidth() - 350, getHeight() - 50, 400, 30, "");
-        iniciarBoton(Boton, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, Palabras_Del_Programa.palabrasLogin[9]);
+        Boton.setBackground(Variables_Globales.Color);
+        Boton.setForeground(Variables_Globales.ColorLetras);
     }
 
     private void iniciarBoton(JButton boton, int x, int y, int ancho, int alto, String texto) {
         boton.setBounds(x, y, ancho, alto);
         boton.setText(texto);
-        boton.setBackground(Color.cyan);
-        boton.setForeground(Color.white);
         boton.setOpaque(false);
         super.add(boton);
         Panel = this;
@@ -43,9 +49,16 @@ public class Panel_Registrarse extends JPanel {
                 } else {
                     archivo.Escribir_En_Archivo(Usuario_Caja.getText(), Contrasenia_Caja.getText(), Nombre_Caja.getText());
                     Metodos_Necesarios_Del_Login.iniciarLabel(Panel, Advertencia, getWidth() - 350, getHeight() - 50, 400, 30, "Datos Agregados,Volver al Sign in");
+                    limpiar();
                 }
             }
         });
+    }
+    
+    private void limpiar(){
+        Nombre_Caja.setText("");
+        Usuario_Caja.setText("");
+        Contrasenia_Caja.setText("");
     }
     Metodos_De_Archivos archivo = new Metodos_De_Archivos();
     JLabel Nombre_Label = new JLabel();

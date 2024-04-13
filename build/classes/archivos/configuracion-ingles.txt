@@ -3,6 +3,7 @@ Setting
 Appearance
 User
 Aid
+Sign off
 Set appearance
 change color
 Change language
