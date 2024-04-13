@@ -13,6 +13,7 @@ public class Panel_Diagonal extends JPanel {
         super.setLayout(null);
         super.setLocation(0, 0);
         super.setSize(365, too.height);
+        super.add(new Apartado_Contenido_Chat());
         Timer tiempo = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
