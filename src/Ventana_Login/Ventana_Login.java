@@ -3,7 +3,6 @@ package Ventana_Login;
 import Principal.App;
 import utilidades_del_programa.Variables_Globales;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,7 +52,7 @@ public class Ventana_Login extends JPanel {
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (label.getText() == Palabras_Del_Programa.palabrasLogin[0]) {
+                if (label.getText().equals(Palabras_Del_Programa.palabrasLogin[0])) {
                     iniciarLabel(linea, (getWidth() / 2) - 120, getHeight() - 550, 200, 30, "_____");
                     iniciarPaneles(Panel_Inicio_Seccion);
                 } else {

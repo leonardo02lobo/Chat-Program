@@ -1,14 +1,7 @@
 package utilidades_del_programa;
 
-import Ventana_Login.Panel_Iniciar_Seccion;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Ventana_Login.*;
+import java.io.*;
 
 public class Metodos_De_Archivos {
 
@@ -29,7 +22,7 @@ public class Metodos_De_Archivos {
             Escribir_Archivo.write(escribir_nombre + ";" + escribir_usuario + ";" + escribir_contrasenia + "\n");
             Escribir_Archivo.close();
         } catch (IOException ex) {
-            Logger.getLogger(Metodos_De_Archivos.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("No se pudo escribir en el archivo");
         }
     }
 
@@ -47,7 +40,7 @@ public class Metodos_De_Archivos {
             }
             tokens1(datos);
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Metodos_De_Archivos.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("No se pudo leer en el archivo");
         }
     }
 

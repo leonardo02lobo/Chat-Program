@@ -12,5 +12,4 @@ leo;leonardo;123
 leo;leonardo;123
 Leonardo;leo123;123
 Leo;leo;123
-sd;sd;sd
 lionel;lio69;lio

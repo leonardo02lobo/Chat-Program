@@ -66,18 +66,18 @@ public class Panel_Iniciar_Seccion extends JPanel {
     }
 
     private void OpenWindow() {
+        JFrame Ventana = new JFrame();
         Ventana_Inicio window = new Ventana_Inicio();
         App app = new App();
-        App.Ventana2.add(window);
-        App.Ventana2.pack();
-        App.Ventana2.setIconImage(app.icono);
-        App.Ventana2.setTitle("Chat Para Programadores");
-        App.Ventana2.setSize(too);
-        App.Ventana2.setResizable(true);
-        App.Ventana2.setLocationRelativeTo(null);
-        App.Ventana2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        App.Ventana2.setVisible(true);
-        App.Ventana.dispose();
+        Ventana.add(window);
+        Ventana.pack();
+        Ventana.setIconImage(app.icono);
+        Ventana.setTitle("Chat Para Programadores");
+        Ventana.setSize(too);
+        Ventana.setResizable(true);
+        Ventana.setLocationRelativeTo(null);
+        Ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Ventana.setVisible(true);
     }
     
     private void LimpiarCasillas(){

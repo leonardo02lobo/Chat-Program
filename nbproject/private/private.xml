@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/Configuracion/Panel_Diagonal_De_Configuracion.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>45</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/equipo/Documents/JAVA/Programas/PROGRAMAS%20EN%20JAVA/Chat%20Para%20Programar/src/Chat/Panel_Chat.java</file>
+            <file>file:/C:/Users/equipo/Documents/JAVA/Programas/PROGRAMAS%20EN%20JAVA/Chat%20Para%20Programar/src/Ventana_De_Inicio/Panel_Diagonal_Busqueda.java</file>
+            <file>file:/C:/Users/equipo/Documents/JAVA/Programas/PROGRAMAS%20EN%20JAVA/Chat%20Para%20Programar/src/Ventana_De_Inicio/Panel_Comunidad.java</file>
+            <file>file:/C:/Users/equipo/Documents/JAVA/Programas/PROGRAMAS%20EN%20JAVA/Chat%20Para%20Programar/src/Ventana_De_Inicio/Ventana_Inicio.java</file>
+        </group>
     </open-files>
 </project-private>

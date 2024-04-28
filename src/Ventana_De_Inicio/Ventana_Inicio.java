@@ -1,6 +1,6 @@
 package Ventana_De_Inicio;
 
-import utilidades_del_programa.Variables_Globales;
+import utilidades_del_programa.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -12,12 +12,17 @@ public class Ventana_Inicio extends JPanel {
         super.setLayout(null);
         super.add(Variables_Globales.Panel_Diagonal);
         panel.setLayout(null);
-        panel.setLocation(365, 0);
-        panel.setSize(too.width - 380, too.height);
         super.add(panel);
         Variables_Globales.tiempo = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                panel.setLocation(Panel_Diagonal_Busqueda.ancho, 0);
+                if (Panel_Diagonal_Busqueda.band) {
+                    panel.setSize(too.width - 380 + Panel_Diagonal_Busqueda.ancho, too.height);
+                } else {
+                    panel.setSize(too.width+ Panel_Diagonal_Busqueda.ancho, too.height);
+                }
+                panel.setBackground(Variables_Globales.Color);
                 CurrentPanel();
             }
         });

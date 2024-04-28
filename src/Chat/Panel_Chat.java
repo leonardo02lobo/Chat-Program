@@ -18,8 +18,13 @@ public class Panel_Chat extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 setBackground(Variables_Globales.Color);
                 usuario.setForeground(Variables_Globales.ColorLetras);
-                cajaDeMensaje.setBounds(20, altoPantalla - 100, anchoPantalla - 150, 40);
-                setSize(anchoPantalla, altoPantalla);
+                cajaDeMensaje.setBounds(20, altoPantalla - 100, anchoPantalla - 220, 40);
+                enviar.setBounds(anchoPantalla - 190, altoPantalla - 100, 100, 40);
+                if (Panel_Diagonal_Busqueda.band) {
+                    setSize(anchoPantalla, altoPantalla);
+                } else {
+                    setSize(anchoPantalla + Panel_Diagonal_Busqueda.ancho + 380, altoPantalla);
+                }
             }
         });
         tiempo.start();
@@ -29,7 +34,7 @@ public class Panel_Chat extends JPanel {
     private void init() {
         iniciarCajaDeMesaje(cajaDeMensaje);
         iniciarTexto(usuario, 20, 20, 100, 100, "Usuario");
-        iniciarBoton(enviar, anchoPantalla - 120, altoPantalla - 100, 100, 40, "Enviar");
+        iniciarBoton(enviar, "Enviar");
         iniciarBotonCambio(cambioParaIA, anchoPantalla / 2, 40, 150, 40, "Compilador");
     }
 
@@ -38,11 +43,18 @@ public class Panel_Chat extends JPanel {
         super.add(caja);
     }
 
-    private void iniciarBoton(JButton boton, int x, int y, int ancho, int alto, String texto) {
+    private void iniciarBoton(JButton boton, String texto) {
         boton.setText(texto);
-        boton.setBounds(x, y, ancho, alto);
         boton.setFont(new Font(Variables_Globales.Tipo_Letra, 1, 20));
         super.add(boton);
+        boton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String texto = cajaDeMensaje.getText();
+                System.out.println(texto);
+                cajaDeMensaje.setText("");
+            }
+        });
     }
 
     private void iniciarBotonCambio(JToggleButton boton, int x, int y, int ancho, int alto, String texto) {
