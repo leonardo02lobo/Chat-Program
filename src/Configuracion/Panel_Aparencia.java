@@ -39,7 +39,7 @@ public class Panel_Aparencia extends JPanel {
         Metodos_Configuracion.iniciarComponentes(this, configuracion_Principal, (getWidth() / 2) - 200, 20, 300, 30, Palabras_Del_Programa.palabrasConfiguracion[5]);
         Metodos_Configuracion.iniciarComponentes(this, CambiarColor, 20, 100, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[6]);
         Metodos_Configuracion.iniciarComponentes(this, CambiarIdioma, 20, 150, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[7]);
-        Metodos_Configuracion.iniciarComponentes(this, CambiarBarraDeBusqueda, 20, 200, 200, 30, Palabras_Del_Programa.palabrasConfiguracion[7]);
+        Metodos_Configuracion.iniciarComponentes(this, CambiarBarraDeBusqueda, 20, 200, 250, 30, Palabras_Del_Programa.palabrasConfiguracion[8]);
     }
 
     private void iniciarBotones(JPanel panel, JToggleButton boton, int x, int y, int ancho, int alto, String texto) {

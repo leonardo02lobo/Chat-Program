@@ -18,6 +18,10 @@ public class Panel_Diagonal_Busqueda extends JPanel {
                 cambiarIdiomaInicio();
                 setBackground(Variables_Globales.Color);
                 if (band) {
+                    Chat_Label.setIcon(new ImageIcon(getClass().getResource("")));
+                    Comunidad_Label.setIcon(new ImageIcon(getClass().getResource("")));
+                    Configuracion_Label.setIcon(new ImageIcon(getClass().getResource("")));
+                    Label_Logo.setIcon(new ImageIcon(getClass().getResource("")));
                     ancho = 365;
                     setSize(ancho, too.height);
                     add(apartado_Chat);
@@ -37,7 +41,7 @@ public class Panel_Diagonal_Busqueda extends JPanel {
         iniciarLabelTexto((getWidth() / 2) - 150, 90, 50, 30, Chat_Label, Palabras_Del_Programa.palabrasInicio[0]);
         iniciarLabelTexto(getWidth() / 2, 90, 150, 30, Comunidad_Label, Palabras_Del_Programa.palabrasInicio[1]);
         iniciarLabelTexto(getWidth() - 100, 20, 100, 50, Configuracion_Label, Palabras_Del_Programa.palabrasInicio[2]);
-        iniciarLabelTexto(getWidth() - 355, 20, 150, 50, Label_Logo, "Chat Programer");
+        iniciarLabelTexto(getWidth() - 355, 20, 200, 50, Label_Logo, "Chat Programer");
     }
 
     private void initImagenes() {

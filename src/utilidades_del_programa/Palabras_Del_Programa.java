@@ -42,7 +42,8 @@ public class Palabras_Del_Programa {
         variables_Configuracion.Volver_Menu, variables_Configuracion.Configuracion_Menu,
         variables_Configuracion.Apariencia_Menu, variables_Configuracion.Usuario_Menu,
         variables_Configuracion.Ayuda_Menu, variables_Configuracion.Apariencia_Configuracion,
-        variables_Configuracion.Cambiar_Color_Configuracion, variables_Configuracion.Cambiar_Idioma_Configuracion
+        variables_Configuracion.Cambiar_Color_Configuracion, variables_Configuracion.Cambiar_Idioma_Configuracion,
+        variables_Configuracion.Cambiar_Barra_Configuracion,
     };
     public static String[] palabrasLogin = {
         variables_Login.Iniciar_Sesion, variables_Login.Registrarse, variables_Login.Usuario_IniciarSesion, variables_Login.Contraseña_IniciarSesion,
@@ -78,6 +79,7 @@ class variables_Configuracion {
     public static String Apariencia_Configuracion;
     public static String Cambiar_Color_Configuracion;
     public static String Cambiar_Idioma_Configuracion;
+    public static String Cambiar_Barra_Configuracion;
 }
 
 class variables_Inicio {

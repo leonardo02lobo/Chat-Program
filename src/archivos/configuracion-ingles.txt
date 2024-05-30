@@ -6,3 +6,4 @@ Aid
 Set appearance
 change color
 Change language
+Change Menu Bar

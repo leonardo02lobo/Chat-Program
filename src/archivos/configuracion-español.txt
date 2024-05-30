@@ -6,3 +6,4 @@ Ayuda
 Configurar Apariencia
 Cambiar Color
 Cambiar Idioma
+Cambiar Barra De Menu
