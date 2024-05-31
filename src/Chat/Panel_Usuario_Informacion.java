@@ -9,7 +9,18 @@ public class Panel_Usuario_Informacion extends JPanel {
     public Panel_Usuario_Informacion() {
         super.setLayout(null);
         super.setBackground(Color.red);
-        super.setLocation(580, 0);
+        Timer t = new Timer(1, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(Panel_Chat.band){
+                    if(posicionX != 580){
+                        posicionX-= 2;
+                    }
+                }
+                setLocation(posicionX, 0);
+            }
+        });
+        t.start();
         super.setSize(anchoPantalla, altoPantalla);
         JButton a = new JButton("<--");
         a.setBounds(20,20,100,20);
@@ -26,4 +37,5 @@ public class Panel_Usuario_Informacion extends JPanel {
     Dimension too = super.getToolkit().getScreenSize();
     int anchoPantalla = too.width - 960;
     int altoPantalla = too.height;
+    int posicionX = 1040;
 }

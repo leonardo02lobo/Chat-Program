@@ -9,14 +9,29 @@ import javax.swing.*;
 public class Panel_Chat extends JPanel {
 
     Dimension too = super.getToolkit().getScreenSize();
+    static Panel_Usuario_Informacion a = new Panel_Usuario_Informacion();
 
     public Panel_Chat() {
         super.setLayout(null);
         super.setLocation(0, 0);
-        Timer tiempo = new Timer(1000 / 60, new ActionListener() {
+        Timer tiempo = new Timer(1, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setBackground(Variables_Globales.Color);
+                if(band){
+                    if(anchoPantalla != anchoFinal){
+                        anchoPantalla-= 2;
+                    }
+                }
+                redimensionarComponentes();
+            }
+        });
+        tiempo.start();
+        init();
+    }
+    
+    //este metodo se encargara de colocar los componentes swing de manera que este se redimensionen
+    private void redimensionarComponentes(){
+        setBackground(Variables_Globales.Color);
                 usuario.setForeground(Variables_Globales.ColorLetras);
                 cajaDeMensaje.setBounds(20, altoPantalla - 100, anchoPantalla - 220, 40);
                 enviar.setBounds(anchoPantalla - 190, altoPantalla - 100, 100, 40);
@@ -25,10 +40,6 @@ public class Panel_Chat extends JPanel {
                 } else {
                     setSize(anchoPantalla + Panel_Diagonal_Busqueda.ancho + 380, altoPantalla);
                 }
-            }
-        });
-        tiempo.start();
-        init();
     }
 
     private void init() {
@@ -83,7 +94,7 @@ public class Panel_Chat extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (bandera) {
-                    anchoPantalla -= 406;
+                    band = true;
                     cambiarUsuarioInformacion(panel);
                     init();
                     bandera = false;
@@ -94,7 +105,7 @@ public class Panel_Chat extends JPanel {
 
     public static void cambiarUsuarioInformacion(JPanel panel) {
         Ventana_Inicio.panel.removeAll();
-        Ventana_Inicio.panel.add(new Panel_Usuario_Informacion(), BorderLayout.CENTER);
+        Ventana_Inicio.panel.add(a, BorderLayout.CENTER);
         Ventana_Inicio.panel.add(panel);
         Ventana_Inicio.panel.revalidate();
         Ventana_Inicio.panel.repaint();
@@ -114,4 +125,6 @@ public class Panel_Chat extends JPanel {
     private int altoPantalla = too.height;
     public static boolean bandera = true;
     JToggleButton cambioParaIA = new JToggleButton();
+    public static boolean band = false;
+    int anchoFinal = anchoPantalla-406;
 }
