@@ -8,11 +8,13 @@ import javax.swing.JFrame;
 
 public class App {
 
+    //variables que se encarga del sistema
     public static int ancho = 1000;
     public static int alto = 700;
     public Image icono = new ImageIcon(getClass().getResource("../source/icon-app.png")).getImage();
 
     public static void main(String[] args) {
+        //crear e instanciar el JFrame
         JFrame Ventana = new JFrame();
         Ventana_Inicio window = new Ventana_Inicio();
         Dimension too = window.getToolkit().getScreenSize();

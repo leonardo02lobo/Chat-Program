@@ -4,6 +4,7 @@ import java.io.*;
 
 public class Palabras_Del_Programa {
 
+    //metodo para obtener la ruta del archivo
     public static void ObtenerArchivo(String archivo_Login_Espaniol) {
         try {
             FileReader lectura = new FileReader(archivo_Login_Espaniol);
@@ -20,6 +21,7 @@ public class Palabras_Del_Programa {
         }
     }
 
+    //metodo para separar las palabras y colocarlas en los vectores correspondientes para el cambio de idioma
     public static void SepararPalabrasEspaniol() {
         String[] palabra = palabras.split(",");
         for (int i = 0; i < palabra.length; i++) {
@@ -54,6 +56,7 @@ public class Palabras_Del_Programa {
         variables_Inicio.chat, variables_Inicio.comunidad, variables_Inicio.ajustes, variables_Inicio.chat_programer
     };
 }
+//Clases que contienen las variables de todo el codigo de tal manera que sean globales y unicas de la clase
 
 class variables_Login {
 

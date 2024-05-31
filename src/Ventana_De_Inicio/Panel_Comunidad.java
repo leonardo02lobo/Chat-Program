@@ -12,6 +12,7 @@ public class Panel_Comunidad extends JPanel{
     
     Dimension too = super.getToolkit().getScreenSize();
 
+    //panel que generara el apartado de comunidad del programa donde el usuario podra acceder a chat privados de manera libre
     public Panel_Comunidad() {
         super.setLayout(null);
         super.setBackground(Color.GRAY);

@@ -5,17 +5,20 @@ import java.io.*;
 
 public class Metodos_De_Archivos {
 
+    //variables para iterar a los usuarios del archivo de texto
     File archivo = new File("database.txt");
     int contador = 0;
     String usuario, contrasenia;
     public static String Dataname = "";
     Datos_Del_Usuario user = new Datos_Del_Usuario();
 
+    //metodo setter para obtener los datos ingresados por el usuario
     public void setDatos(String usuario, String contrasenia) {
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }
 
+    //metodo para escribir en el archivo de texto
     public void Escribir_En_Archivo(String escribir_usuario, String escribir_contrasenia, String escribir_nombre) {
         try {
             FileWriter Escribir_Archivo = new FileWriter(archivo, true);
@@ -26,10 +29,10 @@ public class Metodos_De_Archivos {
         }
     }
 
+    //metodo para leer el archivo de texto
     public void Leer_El_Archivo() throws IOException {
         try {
-            FileReader leer = new FileReader(archivo);
-            BufferedReader lector = new BufferedReader(leer);
+            BufferedReader lector = new BufferedReader(new FileReader(archivo));
 
             String datos = "";
             String palabra = lector.readLine();
@@ -44,6 +47,7 @@ public class Metodos_De_Archivos {
         }
     }
 
+    //metodo para separar los datos que contienen un salto de linea
     public void tokens1(String datos) {
         for (int i = 0; i < contador; i++) {
             String palabras[] = datos.split("\n");
@@ -51,6 +55,7 @@ public class Metodos_De_Archivos {
         }
     }
 
+    //metodo para separar los datos que contiene un ; y almacenarlo en el metodo ValiditySesion
     public void tokens2(String date2) {
         for (int i = 0; i < contador / 2; i++) {
             String[] word2 = date2.split(";");
@@ -61,6 +66,8 @@ public class Metodos_De_Archivos {
         }
     }
 
+    //metodo para validar la seccion de un usuario y determinar si el usuario y la contraseña son las correctas
+    //se utiliza la variable band de la clase Panel_Iniciar_Seccion para determinar si los datos ingresados son correctos
     public void ValiditySesion(String user, String password, String name) {
 
         if (user.equals(usuario) && password.equals(contrasenia)) {

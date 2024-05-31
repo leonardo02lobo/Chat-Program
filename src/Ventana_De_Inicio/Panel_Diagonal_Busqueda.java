@@ -9,9 +9,12 @@ public class Panel_Diagonal_Busqueda extends JPanel {
 
     Dimension too = super.getToolkit().getScreenSize();
 
+    //metodo constructor que es el encargado de instanciar todo el codigo del juego
     public Panel_Diagonal_Busqueda() {
         super.setLayout(null);
         super.setLocation(0, 0);
+        //este timer contiene un condicional que realiza la accion del panel de cambiar Apariencia de la configuracion
+        //el condicional se encarga de cambiar de iconos a letras en el menu principal
         Timer tiempo = new Timer(1000 / 60, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -37,6 +40,7 @@ public class Panel_Diagonal_Busqueda extends JPanel {
         tiempo.start();
     }
 
+    //metodo para inicializar el texto del programa
     private void inittexto() {
         iniciarLabelTexto((getWidth() / 2) - 150, 90, 50, 30, Chat_Label, Palabras_Del_Programa.palabrasInicio[0]);
         iniciarLabelTexto(getWidth() / 2, 90, 150, 30, Comunidad_Label, Palabras_Del_Programa.palabrasInicio[1]);
@@ -44,6 +48,7 @@ public class Panel_Diagonal_Busqueda extends JPanel {
         iniciarLabelTexto(getWidth() - 355, 20, 200, 50, Label_Logo, "Chat Programer");
     }
 
+    //metodo para inicializar las imagenes del juego
     private void initImagenes() {
         iniciarLabelImagenes(10, 20, 100, 100, Label_Logo, "../source/icon-app.png");
         iniciarLabelImagenes(10, 150, 100, 100, Configuracion_Label, "../source/Icon-Settings-modified.png");
@@ -51,6 +56,7 @@ public class Panel_Diagonal_Busqueda extends JPanel {
         iniciarLabelImagenes(10, 410, 100, 100, Comunidad_Label, "../source/Icon-Community-modified.png");
     }
 
+    //metodo para inicializar el label del texto, estos label generan una accion que despliegan los diferentes paneles del programa
     private void iniciarLabelTexto(int x, int y, int ancho, int alto, JLabel label, String texto) {
         label.setText(texto);
         label.setBounds(x, y, ancho, alto);
@@ -72,6 +78,7 @@ public class Panel_Diagonal_Busqueda extends JPanel {
         });
     }
 
+    //metodo para iniciar las imagenes del programa, estos label generan una accion que despliegan los diferentes paneles del programa
     private void iniciarLabelImagenes(int x, int y, int ancho, int alto, JLabel label, String url) {
         Image img = new ImageIcon(getClass().getResource(url)).getImage();
         label.setIcon(new ImageIcon(img.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH)));
@@ -92,6 +99,7 @@ public class Panel_Diagonal_Busqueda extends JPanel {
         });
     }
 
+    //metodo para cambiar el idioma del juego
     public static void cambiarIdiomaInicio() {
         Palabras_Del_Programa.pantalla = "inicio";
         if (Variables_Globales.CambiarIdioma == 0) {
@@ -101,6 +109,7 @@ public class Panel_Diagonal_Busqueda extends JPanel {
         }
     }
 
+    //variables
     JLabel Chat_Label = new JLabel();
     JLabel Comunidad_Label = new JLabel();
     JLabel Configuracion_Label = new JLabel();

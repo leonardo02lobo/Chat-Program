@@ -7,6 +7,8 @@ import javax.swing.*;
 
 public class Ventana_Inicio extends JPanel {
 
+    //metodo constructor que inicializa el panel y contiene un Timer que se encarga de localizar los panles correspondientes 
+    // y cambiar el color del fondo
     public Ventana_Inicio() {
         super.setSize(too);
         super.setLayout(null);
@@ -29,6 +31,7 @@ public class Ventana_Inicio extends JPanel {
         Variables_Globales.tiempo.start();
     }
 
+    //metodo que se encarga de cambiar los paneles del programa
     private void CurrentPanel() {
         switch (Variables_Globales.Posicion) {
             case 0:
@@ -56,6 +59,7 @@ public class Ventana_Inicio extends JPanel {
         }
     }
 
+    //metodo que se encarga de cambiar el cambiar el panel
     private void Cambiar_Paneles(JPanel panel,JPanel content) {
         panel.removeAll();
         panel.add(content, BorderLayout.CENTER);
@@ -64,6 +68,7 @@ public class Ventana_Inicio extends JPanel {
         Variables_Globales.tiempo.stop();
     }
 
+    //metodo que se encarga de cambiar los paneles pero manteniendo los anteriores
     private void Cambiar_Paneles(JPanel diagonal,JPanel content,JPanel content2) {
         super.removeAll();
         super.add(diagonal);
@@ -73,6 +78,7 @@ public class Ventana_Inicio extends JPanel {
         super.repaint();
         Variables_Globales.tiempo.stop();
     }
+    //variables
     public static JPanel panel = new JPanel();
     Dimension too = super.getToolkit().getScreenSize();
     JPanel contenido = new JPanel();

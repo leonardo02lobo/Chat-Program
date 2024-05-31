@@ -11,6 +11,8 @@ import javax.swing.*;
 
 public class Panel_Iniciar_Seccion extends JPanel {
 
+    //constructor que inicializa el lenguaje de la aplicacion y el sistema de Login
+    //este metood contiene un Timer para cambiar el color y el idioma 
     public Panel_Iniciar_Seccion() {
         Ventana_Login.iniciarLenguajeLogin();
         super.setLayout(null);
@@ -30,6 +32,7 @@ public class Panel_Iniciar_Seccion extends JPanel {
         Metodos_Necesarios_Del_Login.iniciarCheck(this, Licencia_Inicio_Seccion, (getWidth() / 2) - 150, getHeight() - 200, 250, 30, Palabras_Del_Programa.palabrasLogin[4]);
     }
 
+    //metodo encargado de iniciarlizar los componentes que cambiaran 
     private void init() {
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Usuario_Label, (getWidth() / 2) - 150, getHeight() - 430, 150, 30, Palabras_Del_Programa.palabrasLogin[2]);
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Contrasenia_Label, (getWidth() / 2) - 150, getHeight() - 330, 150, 30, Palabras_Del_Programa.palabrasLogin[3]);
@@ -37,6 +40,8 @@ public class Panel_Iniciar_Seccion extends JPanel {
         Boton_Iniciar_Seccion.setForeground(Variables_Globales.ColorLetras);
     }
 
+    //metodo que inicializa el boton y genera un ActionListener que se encarga de iniciar el otro panel si los datos estan
+    //escritos de manera correcta
     private void iniciarBoton(JButton boton, int x, int y, int ancho, int alto, String texto) {
         boton.setBounds(x, y, ancho, alto);
         boton.setText(texto);
@@ -65,6 +70,7 @@ public class Panel_Iniciar_Seccion extends JPanel {
         });
     }
 
+    //metodo que se encarga de crear la nueva ventana donde estara el chat
     private void OpenWindow() {
         JFrame Ventana = new JFrame();
         Ventana_Inicio window = new Ventana_Inicio();
@@ -80,12 +86,14 @@ public class Panel_Iniciar_Seccion extends JPanel {
         Ventana.setVisible(true);
     }
     
+    //este metodo se encarga de limpiar las casillas de texto y quitar el check
     private void LimpiarCasillas(){
         Usuario.setText("");
         Contrasenia.setText("");
         Licencia_Inicio_Seccion.setSelected(false);
     }
 
+    //variables
     public static boolean band = false;
     Dimension too = super.getToolkit().getScreenSize();
     JLabel iniciarSesion = new JLabel();

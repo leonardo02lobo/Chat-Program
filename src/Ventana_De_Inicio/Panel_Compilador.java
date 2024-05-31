@@ -8,7 +8,8 @@ import javax.swing.*;
 public class Panel_Compilador extends JPanel{
     
     Dimension too = super.getToolkit().getScreenSize();
-
+    
+    //metodo constructor que es panel donde se encontrara el apartado de compilador del programa
     public Panel_Compilador() {
         super.setLayout(null);
         super.setBackground(Color.red);

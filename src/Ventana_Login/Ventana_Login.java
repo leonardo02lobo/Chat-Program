@@ -15,6 +15,7 @@ import utilidades_del_programa.*;
 
 public class Ventana_Login extends JPanel {
 
+    //metodo constructor que contiene un Timer que se encarga de cambiar el color
     public Ventana_Login() { 
         iniciarLenguajeLogin();
         super.setSize(App.ancho, App.alto);
@@ -29,13 +30,15 @@ public class Ventana_Login extends JPanel {
         init();
     }
 
+    //metodo para iniciar los componentes swing
     private void init() {
         iniciarPaneles(Panel_Inicio_Seccion);
         iniciarLabel(IniciarSeccion, (getWidth() / 2) - 150, getHeight() - 600, 200, 30, Palabras_Del_Programa.palabrasLogin[0]);
         iniciarLabel(linea, (getWidth() / 2) - 120, getHeight() - 585, 100, 30, "_____");
         iniciarLabel(Registrarse, (getWidth() / 2) + 50, getHeight() - 600, 200, 30, Palabras_Del_Programa.palabrasLogin[1]);
     }
-
+    
+    //metodo para iniciar los label del programa que contienen un Timer para cambiar de color
     private void iniciarLabel(JLabel label, int x, int y, int width, int height, String text) {
         label.setText(text);
         label.setFont(new Font(Variables_Globales.Tipo_Letra, 1, 20));
@@ -63,6 +66,7 @@ public class Ventana_Login extends JPanel {
         });
     }
     
+    //metodo para iniciar los paneles que pasa por parametro el panel a cambiar
     private void iniciarPaneles(JPanel panel){
         removeAll();
         add(panel,BorderLayout.CENTER);
@@ -73,11 +77,13 @@ public class Ventana_Login extends JPanel {
         add(linea);
     }
     
+    //metodo para cambiar el lenguaje
     public static void iniciarLenguajeLogin(){
         Palabras_Del_Programa.pantalla = "login";
         Palabras_Del_Programa.ObtenerArchivo("src/archivos/login-español.txt");
     }
 
+    //variables
     Panel_Iniciar_Seccion Panel_Inicio_Seccion = new Panel_Iniciar_Seccion();
     Panel_Registrarse Panel_registrarse = new Panel_Registrarse();
     JLabel IniciarSeccion = new JLabel();

@@ -7,6 +7,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Variables_Globales {
+    //variables del codigo que son necesarias
     public final static String Tipo_Letra = "Arial";
     public static Color Color = new Color(20, 15, 20);
     public static Color ColorLetras = new Color(255, 255, 255);

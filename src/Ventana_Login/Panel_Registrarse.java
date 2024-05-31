@@ -6,6 +6,7 @@ import javax.swing.*;
 
 public class Panel_Registrarse extends JPanel {
 
+    //constructor que se encarga de cambiar el color y el idioma a esta seccion
     public Panel_Registrarse() {
         Ventana_Login.iniciarLenguajeLogin();
         super.setLayout(null);
@@ -25,6 +26,7 @@ public class Panel_Registrarse extends JPanel {
         iniciarBoton(Boton, (getWidth() / 2) - 80, getHeight() - 150, 150, 30, Palabras_Del_Programa.palabrasLogin[9]);
     }
 
+    //metodo para iniciar los label que cambiaran de idioma y el color del boton
     private void init() {
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Nombre_Label, (getWidth() / 2) - 150, (getHeight() / 2) - 230, 150, 30, Palabras_Del_Programa.palabrasLogin[6]);
         Metodos_Necesarios_Del_Login.iniciarLabel(this, Usuario_Label, (getWidth() / 2) - 150, (getHeight() / 2) - 130, 150, 30, Palabras_Del_Programa.palabrasLogin[7]);
@@ -34,6 +36,7 @@ public class Panel_Registrarse extends JPanel {
         Boton.setForeground(Variables_Globales.ColorLetras);
     }
 
+    //metodo que se encarga de crear el boton y genera un ActionListener que evalua los campos y los manda al metodo del archivo
     private void iniciarBoton(JButton boton, int x, int y, int ancho, int alto, String texto) {
         boton.setBounds(x, y, ancho, alto);
         boton.setText(texto);
@@ -54,11 +57,14 @@ public class Panel_Registrarse extends JPanel {
         });
     }
     
+    //metodo para limpiar los datos
     private void limpiar(){
         Nombre_Caja.setText("");
         Usuario_Caja.setText("");
         Contrasenia_Caja.setText("");
     }
+    
+    //variables
     Metodos_De_Archivos archivo = new Metodos_De_Archivos();
     JLabel Nombre_Label = new JLabel();
     JTextField Nombre_Caja = new JTextField();
